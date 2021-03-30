@@ -36,7 +36,7 @@ if (!empty($_SESSION['user'])) {
                     break;
                 }
             } else {
-                $error= "Votre compte a bien été créé ! <a href=\"register.php\">S'enregistrer</a>";
+                $error= "Login et/ou mot de passe incorrect ! <a href=\"register.php\">S'enregistrer</a>";
             }
         }
     }

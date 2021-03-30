@@ -11,3 +11,5 @@ try {
     exit("Error: " . $e->getMessage());
 }
 ?>
+
+$dbh = new PDO('mysql:localhost;dbname=GetFlix', 'root', 'root');
