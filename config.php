@@ -1,5 +1,5 @@
 <?php
-$Host = 'localhost';
+$Host = 'database';
 $UserName = 'root';
 $Password = 'root';
 $dbn = 'GetFlix';
