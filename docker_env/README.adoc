@@ -1,0 +1,26 @@
+= Docker
+
+To setup this development environment you will need to have *docker* and
+*docker-compose* installed on you system. You can add your projects to the
+folder _htdocs_ and a _file.sql_ into the folder _data_.
+
+To run the environment:
+
+* clone the repository
+* enter this folder
+* run `sudo docker-compose up -d`
+
+The environment is composed of *PHP*, *Apache* (running on port _80_), *MariaDB*
+and *PHPmyadmin* (running on port _8081_).
+
+This environment is a basic one with only an handful of tools. If you need to
+implement new things, such as a mailing system, you will have to do so on the
+_docker-compose.yml_ or/and _Dockerfile_.
+
+If all is well you should have access to your environment at
+http://localhost:80.
+
+To stop the process run `sudo docker-compose down`, and to clean the created
+image run `sudo docker rmi docker_env_server`.
+
+NOTE: You can always ask help to your coach to setup your environment.
