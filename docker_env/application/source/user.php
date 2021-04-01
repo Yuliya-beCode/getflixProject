@@ -2,7 +2,7 @@
 session_start();
 // checking user logged or not
 if (empty($_SESSION['user'])) {
-    header('location: index.php');
+    header('location: login.php');
 }
 // restrict admin to access user.php page
 if ($_SESSION['user']['role'] == 'admin') {

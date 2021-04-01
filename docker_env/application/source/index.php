@@ -1,69 +1,40 @@
-<?php
-session_start();
-include('config.php');
-//Getting Input value
-if (!empty($_SESSION['user'])) {
-    header("location: user.php");
-} else {
-    if (isset($_POST['login'])) {
-        $username = $_POST['username'];
-        $password = sha1($_POST['password']);
-        
-        if (empty($username) && empty($password)) {
-            $error= 'Fields are mandatory';
-        } else {
-            //Checking login detail
-            $sql = "SELECT * FROM `user` WHERE `username`=:username AND `password`=:password";
-            $query = $dbh->prepare($sql);
-            $query->bindParam(':username', $username, PDO::PARAM_STR);
-            $query->bindParam(':password', $password, PDO::PARAM_STR);
-            $query->execute();
-            $results = $query->fetch(PDO::FETCH_ASSOC);
-            if ($query->rowCount()>0) {
-                $_SESSION['user']=array(
-                    'username'=>$results['username'],
-                    'password'=>$results['password'],
-                    'role'=>$results['role']
-                );
-                $role=$_SESSION['user']['role'];
-                //Redirecting user based on role
-                switch ($role) {
-                    case 'user':
-                    header('user.php');
-                    break;
-                    case 'admin':
-                    header('admin.php');
-                    break;
-                }
-            } else {
-                $error= "Login et/ou mot de passe incorrect ! <a href=\"register.php\">S'enregistrer</a>";
-            }
-        }
-    }
-    ?>
-    <html>
-    <head>
-    <title>PDO role based login</title>
-    </head>
-    <div align="center">
-        <h3>NetFlix Killer</h3>
-        <form method="POST" action="">
-            <table>
-                <tr>
-                    <td>Username:</td>
-                    <td><input type="text" name="username"/></td>
-                </tr>
-                <tr>
-                    <td>Password:</td>
-                    <td><input type="password" name="password"/></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><input type="submit" name="login" value="Login"/></td>
-                </tr>
-            </table>
-        </form>
-        <?php if(isset($error)){ echo $error; }?>
-    </div>
-    </html>
-<?php } ?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>The theater</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <!-- Navbar content -->
+
+      <a button href="" class="active">Search</a>
+      <a href="register.php">Register</a>
+      <a href="login.php">Log in</a>
+    </nav>
+
+   
+    <div>
+        <div id="home">
+          <p>The theater</p>
+             <h1>The theater</h1>
+         
+        </div>
+      
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+  </body>
+</html>

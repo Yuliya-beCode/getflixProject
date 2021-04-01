@@ -21,8 +21,8 @@
       <!-- Navbar content -->
 
       <a button href="" class="active">Search</a>
-      <a href="register.html">Register</a>
-      <a href="login.html">Log in</a>
+      <a href="register.php">Register</a>
+      <a href="login.php">Log in</a>
     </nav>
 
    

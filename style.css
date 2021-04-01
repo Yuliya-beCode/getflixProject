@@ -3,6 +3,9 @@ body{
     background-repeat: no-repeat;
     position: relative;
     background-size: cover;
+    margin-left: 25px;
+    margin-right: 25px;
+
     }
   
   h1{

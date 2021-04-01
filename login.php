@@ -20,9 +20,9 @@
     <nav class="navbar navbar-dark bg-dark">
       <!-- Navbar content -->
 
-      <a button href="index.html">Welcome Page</a>
-      <a href="register.html">Register</a>
-      <a href="login.html" class="active">Log in</a>
+      <a button href="index.php">Welcome Page</a>
+      <a href="register.php">Register</a>
+      <a href="login.php" class="active">Log in</a>
     </nav>
 
     <section class="section pb-5">
@@ -64,7 +64,7 @@
 
                 <div class="form-footer">
                     <h5>
-                        <a href="register.html" class="stretched-link">Haven't Registered yet? Click here!</a>
+                        <a href="register.php" class="stretched-link">Haven't Registered yet? Click here!</a>
                     </h5>
                   </div>
 
