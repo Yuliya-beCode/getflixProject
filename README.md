@@ -2,7 +2,7 @@
 
 ### Welcome to the webpage of The Theatre !
 
-![Logo](source/pictures/Logo.png)
+![Logo](docker_env\application\source\pictures\Logo.png)
 
 # Who
 
@@ -18,7 +18,7 @@ If you have any questions in regards to our project, please do not hesitate to c
 
 
 # How
-![search_flowchart_dark](source/pictures/search_flowchart_dark.jpg)
+![search_flowchart_dark](docker_env\application\source\pictures\search_flowchart_dark.jpg)
 
 # Why
 
