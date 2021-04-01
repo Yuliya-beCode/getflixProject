@@ -25,24 +25,24 @@ if (isset($_POST['forminscription'])) {
                   if ($password == $password2) {
                      $insertmbr = $dbh->prepare("INSERT INTO user(firstname, lastname, username, email, password) VALUES(?, ?, ?, ?, ?)");
                      $insertmbr->execute(array($firstname, $lastname, $username, $email, $password));
-                     $erreur = "Votre compte a bien été créé ! <a href=\"index.php\">Me connecter</a>";
+                     $erreur = "Your Account is Created! <a href=\"index.php\">Log in</a>";
                   } else {
-                     $erreur = "Vos mots de passes ne correspondent pas !";
+                     $erreur = "Your passwords do not match !";
                   }
                } else {
-                  $erreur = "Adresse mail déjà utilisée !";
+                  $erreur = "Email address already exists!";
                }
             } else {
-               $erreur = "Votre adresse mail n'est pas valide !";
+               $erreur = "Your Email address is not valid!";
             }
          } else {
-            $erreur = "Vos adresses mail ne correspondent pas !";
+            $erreur = "Your Email address doesn't correspond !";
          }
       } else {
-         $erreur = "Votre username ne doit pas dépasser 255 caractères !";
+         $erreur = "Your username is too long !";
       }
    } else {
-      $erreur = "Tous les champs doivent être complétés !";
+      $erreur = "Please fill in All the blanks!";
    }
 }
 ?>
@@ -144,9 +144,9 @@ if (isset($_POST['forminscription'])) {
    <nav class="navbar navbar-dark bg-dark">
       <!-- Navbar content -->
 
-      <a button href="index.html">Welcome Page</a>
-      <a href="register.html" class="active">Register</a>
-      <a href="login.html">Log in</a>
+      <a button href="index.php">Welcome Page</a>
+      <a href="register.php" class="active">Register</a>
+      <a href="login.php">Log in</a>
    </nav>
 
    <section class="section pb-5">
@@ -163,7 +163,7 @@ if (isset($_POST['forminscription'])) {
             <div class="card">
                <form method="POST" action="" class="card-body">
                   <div class="form-header">
-                     <h3><i class="fas fa-envelope-square"></i> Please Fill in the Blanks</h3>
+                     <h3><i class="fas fa-envelope-square"></i> Please Fill in All the Blanks</h3>
                   </div>
 
                   <div class="md-form">
@@ -224,17 +224,20 @@ if (isset($_POST['forminscription'])) {
                      <i class="fas fa-paper-plane"></i>
                   </div>
 
+                  <div class ="text-center mt-4">
+                  <?php
+                   if (isset($erreur)) {
+                  echo '<font color="red">' . $erreur . "</font>";
+                     }
+                  ?>
+                  </div>
                </form>
 
             </div>
 
 
          </div>
-         <?php
-         if (isset($erreur)) {
-            echo '<font color="red">' . $erreur . "</font>";
-         }
-         ?>
+        
    </section>
 
 

@@ -39,3 +39,13 @@ body{
     background-color: blue;
     color:white;
   }
+
+  .navbar {
+   
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+.errors {
+    text-align: center;
+  }
