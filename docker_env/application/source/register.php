@@ -1,4 +1,6 @@
-<?php
+
+
+      <?php
 
 
 require('config.php');
@@ -46,14 +48,14 @@ if (isset($_POST['forminscription'])) {
    }
 }
 ?>
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
    <!-- Required meta tags -->
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
+   <link rel="shortcut icon" href="./pictures/Logo.png">
    <!-- Bootstrap CSS -->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
@@ -66,101 +68,102 @@ if (isset($_POST['forminscription'])) {
 
    <nav class="navbar navbar-dark bg-dark d-flex justify-content-around">
       <!-- Navbar content -->
-
+      <img id="logo" src="./pictures/Logo.png" alt="logo" srcset="">
       <a button href="index.php" style="color: crimson;">Welcome Page</a>
       <a href="register.php" class="active">Register</a>
       <a href="login.php" style="color: crimson;">Log in</a>
    </nav>
 
-   <div class="container-fluid">
+   
+   <div class="container-fluid mt-5">
+    <div class="row d-flex justify-content-center">
+         
 
       <h2 class="section-heading h1 pt-4 text-white text-center">Registration</h2>
 
-      <div class="row d-flex justify-content-center">
+      <div class="col-sm-8">
+         <div class="card">
 
-      <div class="col-sm-2">
-         <img id="logo" src="./pictures/Logo.png" alt="logo" srcset="">
-      </div>
-         <div class="col-sm-8">
-            <div class="card">
-               <form method="POST" action="" class="card-body">
-                  <div class="form-header">
-                     <h3><i class="fas fa-envelope-square"></i> Please Fill in All the Blanks</h3>
-                  </div>
+            <form method="POST" action="" class="card-body">
+               <div class="form-header">
+                  <h3><i class="fas fa-envelope-square"></i> Please Fill in All the Blanks</h3>
+               </div>
 
-                  <div class="md-form">
-                     <label for="form-firstname">First Name</label>
-                     <i class="fas fa-user prefix grey-text"></i>
-                     <input type="text" name="firstname" id="firstname" class="form-control" value="<?php if (isset($firstname)) {
-                                                                                                         echo $firstname;
-                                                                                                      } ?>" />
-                  </div>
-
-                  <div class="md-form">
-                     <label for="form-lastname">Last Name</label>
-                     <i class="fas fa-user prefix grey-text"></i>
-                     <input type="text" id="lastname" class="form-control" name="lastname" value="<?php if (isset($lastname)) {
-                                                                                                      echo $lastname;
+               <div class="md-form">
+                  <label for="form-firstname">First Name</label>
+                  <i class="fas fa-user prefix grey-text"></i>
+                  <input type="text" name="firstname" id="firstname" class="form-control" value="<?php if (isset($firstname)) {
+                                                                                                      echo $firstname;
                                                                                                    } ?>" />
-                  </div>
+               </div>
 
-                  <div class="md-form">
-                     <label for="form-nickname">Nickname</label>
-                     <i class="fas fa-user prefix grey-text"></i>
-                     <input type="text" id="username" class="form-control" name="username" value="<?php if (isset($username)) {
-                                                                                                      echo $username;
-                                                                                                   } ?>" />
-                  </div>
-
-                  <div class="md-form">
-                     <label for="form-email">Your email</label>
-                     <i class="fas fa-envelope prefix grey-text"></i>
-                     <input type="text" class="form-control" id="email" name="email" value="<?php if (isset($email)) {
-                                                                                                echo $email;
-                                                                                             } ?>" />
-                  </div>
-
-                  <div class="md-form">
-                     <label for="form-email">Comfirm your email</label>
-                     <i class="fas fa-envelope prefix grey-text"></i>
-                     <input type="text" class="form-control" id="email2" name="email2" value="<?php if (isset($email2)) {
-                                                                                                   echo $email2;
+               <div class="md-form">
+                  <label for="form-lastname">Last Name</label>
+                  <i class="fas fa-user prefix grey-text"></i>
+                  <input type="text" id="lastname" class="form-control" name="lastname" value="<?php if (isset($lastname)) {
+                                                                                                   echo $lastname;
                                                                                                 } ?>" />
-                  </div>
+               </div>
 
-                  <div class="md-form">
-                     <label for="form-password">Password</label>
-                     <i class="fas fa-key"></i>
-                     <input type="text" class="form-control" id="password" name="password" />
-                  </div>
+               <div class="md-form">
+                  <label for="form-nickname">Nickname</label>
+                  <i class="fas fa-user prefix grey-text"></i>
+                  <input type="text" id="username" class="form-control" name="username" value="<?php if (isset($username)) {
+                                                                                                   echo $username;
+                                                                                                } ?>" />
+               </div>
 
-                  <input type="hidden" name="forminscription" value="any" />
+               <div class="md-form">
+                  <label for="form-email">Your email</label>
+                  <i class="fas fa-envelope prefix grey-text"></i>
+                  <input type="text" class="form-control" id="email" name="email" value="<?php if (isset($email)) {
+                                                                                             echo $email;
+                                                                                          } ?>" />
+               </div>
 
-                  <div class="md-form">
-                     <label for="for-confirm">Confirm Password</label>
-                     <i class="fas fa-key"></i>
-                     <input type="text" class="form-control" id="password2" name="password2" />
-                  </div>
-                  <div class="text-center mt-4">
-                     <button class="btn btn-light-blue" name="forminscription">Submit</button>
-                     <i class="fas fa-paper-plane"></i>
-                  </div>
+               <div class="md-form">
+                  <label for="form-email">Comfirm your email</label>
+                  <i class="fas fa-envelope prefix grey-text"></i>
+                  <input type="text" class="form-control" id="email2" name="email2" value="<?php if (isset($email2)) {
+                                                                                                echo $email2;
+                                                                                             } ?>" />
+               </div>
 
-                  <div class="text-center mt-4">
-                     <?php
-                     if (isset($erreur)) {
-                        echo '<font color="red">' . $erreur . "</font>";
-                     }
-                     ?>
-                  </div>
-               </form>
+               <div class="md-form">
+                  <label for="form-password">Password</label>
+                  <i class="fas fa-key"></i>
+                  <input type="text" class="form-control" id="password" name="password" />
+               </div>
 
-            </div>
+               <input type="hidden" name="forminscription" value="any" />
+
+               <div class="md-form">
+                  <label for="for-confirm">Confirm Password</label>
+                  <i class="fas fa-key"></i>
+                  <input type="text" class="form-control" id="password2" name="password2" />
+               </div>
+               <div class="text-center mt-4">
+                  <button class="btn btn-light-blue" name="forminscription">Submit</button>
+                  <i class="fas fa-paper-plane"></i>
+               </div>
+
+               <div class="text-center mt-4">
+                  <?php
+                  if (isset($erreur)) {
+                     echo '<font color="red">' . $erreur . "</font>";
+                  }
+                  ?>
+               </div>
+
+            </form>
+
          </div>
       </div>
    </div>
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
 </body>

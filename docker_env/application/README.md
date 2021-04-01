@@ -13,3 +13,15 @@ Our Project Team consists of
 * Project Manager - @Yuliya-beCode
 
 If you have any questions in regards to our project, please do not hesitate to contact us directly on GitHub
+
+# What
+
+
+# How
+![search_flowchart_dark](source/pictures/search_flowchart_dark.jpg)
+
+# Why
+
+# When
+
+
