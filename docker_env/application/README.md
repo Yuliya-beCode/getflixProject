@@ -2,7 +2,7 @@
 
 ### Welcome to the webpage of The Theatre !
 
-![Logo](source\pictures\Logo.png)
+![Logo](source/pictures/Logo.png)
 
 # Who
 
