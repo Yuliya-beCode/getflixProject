@@ -100,9 +100,9 @@ if (!empty($_SESSION['user'])) {
                 </div>
 
                 <div class="text-center mt-4">
-                  <button class="btn btn-light-blue">Submit</button>
+                  <button class="btn btn-light-blue" type="submit" name="login" value="Login">Submit</button>
                   <i class="fas fa-paper-plane"></i>
-                  <input type="submit" name="login" value="Login"/>
+                
                 </div>
 
                 <div class="form-footer">
