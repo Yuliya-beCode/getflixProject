@@ -17,14 +17,14 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-dark bg-dark">
+  <nav class="navbar navbar-dark bg-dark d-flex justify-content-around">
       <!-- Navbar content -->
-
+      <div><img id="logo" src="./pictures/Logo.png" alt="logo" srcset=""></div>
       <a button href="" class="active">Search</a>
-      <a href="register.php">Register</a>
-      <a href="login.php">Log in</a>
+      <a href="register.php" style="color:crimson;">Register</a>
+      <a href="login.php" style="color:crimson;">Log in</a>
     </nav>
-
+   
    
     <div>
         <div id="home">

@@ -1,51 +1,56 @@
-body{
-    background-image: url(./pictures/jake-hills-theater.png);
-    background-repeat: no-repeat;
-    position: relative;
-    background-size: cover;
-    }
-  
-  h1{
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    color: wheat;
-    position: relative;
-    padding-top: 200px;
-    
-  }
-  
-  h2{
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    color: wheat;
-  }
-  
-  #films{
-    color: wheat;
-    text-align: center;
-    list-style: none;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
-  }
-  
-  
-  label{
+body {
+  background-image: url(./pictures/jake-hills-theater.png);
+  background-repeat: no-repeat;
+  position: relative;
+  background-size:cover;
+
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: wheat;
+  position: relative;
+  padding-top: 200px;
+
+}
+
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: wheat;
+}
+
+#films {
+  color: wheat;
+  text-align: center;
+  list-style: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+label {
   display: inline-block;
   width: 100px;
-  color:rgb(185, 172, 172);
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
-  }
-  
-  .active{
-    background-color: blue;
-    color:white;
-  }
+  color: rgb(185, 172, 172);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
-  .navbar {
-   
-    padding-left: 15px;
-    padding-right: 15px;
-  }
+.active {
+  background-color: crimson;
+  color: white;
+}
+
+.navbar {
+  padding-left: 15px;
+  padding-right: 15px;
+}
 
 .errors {
-    text-align: center;
-  }
+  text-align: center;
+}
+
+#logo {
+  width: 80px;
+  border-radius: 50px;
+}

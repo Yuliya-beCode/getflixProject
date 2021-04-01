@@ -63,101 +63,25 @@ if (isset($_POST['forminscription'])) {
 </head>
 
 <body>
-   <form method="POST" action="" style="display:none">
-      <table>
-         <tr>
-            <td align="right">
-               <label for="firstname">firstname :</label>
-            </td>
-            <td>
-               <input type="text" placeholder="Votre firstname" id="firstname" name="firstname" value="<?php if (isset($firstname)) {
-                                                                                                            echo $firstname;
-                                                                                                         } ?>" />
-            </td>
-         </tr>
-         <tr>
-            <td align="right">
-               <label for="lastname">lastname :</label>
-            </td>
-            <td>
-               <input type="text" placeholder="Votre lastname" id="lastname" name="lastname" value="<?php if (isset($lastname)) {
-                                                                                                         echo $lastname;
-                                                                                                      } ?>" />
-            </td>
-         </tr>
-         <tr>
-            <td align="right">
-               <label for="username">username :</label>
-            </td>
-            <td>
-               <input type="text" placeholder="Votre username" id="username" name="username" value="<?php if (isset($username)) {
-                                                                                                         echo $username;
-                                                                                                      } ?>" />
-            </td>
-         </tr>
-         <tr>
-            <td align="right">
-               <label for="email">Mail :</label>
-            </td>
-            <td>
-               <input type="email" placeholder="Votre mail" id="email" name="email" value="<?php if (isset($email)) {
-                                                                                                echo $email;
-                                                                                             } ?>" />
-            </td>
-         </tr>
-         <tr>
-            <td align="right">
-               <label for="email2">Confirmation du mail :</label>
-            </td>
-            <td>
-               <input type="email2" placeholder="Confirmez votre mail" id="email2" name="email2" value="<?php if (isset($email2)) {
-                                                                                                            echo $email2;
-                                                                                                         } ?>" />
-            </td>
-         </tr>
-         <tr>
-            <td align="right">
-               <label for="password">Mot de passe :</label>
-            </td>
-            <td>
-               <input type="password" placeholder="Votre mot de passe" id="password" name="password" />
-            </td>
-         </tr>
-         <tr>
-            <td align="right">
-               <label for="password2">Confirmation du mot de passe :</label>
-            </td>
-            <td>
-               <input type="password" placeholder="Confirmez votre mdp" id="password2" name="password2" />
-            </td>
-         </tr>
-         <tr>
-            <td></td>
-            <td align="center">
-               <br />
-               <input type="submit" name="forminscription" value="Je m'inscris" />
-            </td>
-         </tr>
-      </table>
-   </form>
-
-   <nav class="navbar navbar-dark bg-dark">
+ 
+   <nav class="navbar navbar-dark bg-dark d-flex justify-content-around">
       <!-- Navbar content -->
-
-      <a button href="index.php">Welcome Page</a>
+      <div><img id="logo" src="./pictures/Logo.png" alt="logo" srcset=""></div>
+      <a button href="index.php" style="color: crimson;">Welcome Page</a>
       <a href="register.php" class="active">Register</a>
-      <a href="login.php">Log in</a>
+      <a href="login.php" style="color: crimson;">Log in</a>
    </nav>
 
+   <div class="container-fluid">
    <section class="section pb-5">
 
 
       <h2 class="section-heading h1 pt-4 text-white text-center">Registration</h2>
 
-      <div class="row">
+      <div class="row d-flex justify-content-center">
 
 
-         <div class="col-8 offset-2">
+         <div class="col-8 ">
 
 
             <div class="card">
@@ -170,24 +94,24 @@ if (isset($_POST['forminscription'])) {
                      <label for="form-firstname">First Name</label>
                      <i class="fas fa-user prefix grey-text"></i>
                      <input type="text" name="firstname" id="firstname" class="form-control" value="<?php if (isset($firstname)) {
-                                                                                                            echo $firstname;
-                                                                                                         } ?>" />
+                                                                                                         echo $firstname;
+                                                                                                      } ?>" />
                   </div>
 
                   <div class="md-form">
                      <label for="form-lastname">Last Name</label>
                      <i class="fas fa-user prefix grey-text"></i>
                      <input type="text" id="lastname" class="form-control" name="lastname" value="<?php if (isset($lastname)) {
-                                                                                                         echo $lastname;
-                                                                                                      } ?>" />
+                                                                                                      echo $lastname;
+                                                                                                   } ?>" />
                   </div>
 
                   <div class="md-form">
                      <label for="form-nickname">Nickname</label>
                      <i class="fas fa-user prefix grey-text"></i>
                      <input type="text" id="username" class="form-control" name="username" value="<?php if (isset($username)) {
-                                                                                                         echo $username;
-                                                                                                      } ?>" />
+                                                                                                      echo $username;
+                                                                                                   } ?>" />
                   </div>
 
                   <div class="md-form">
@@ -202,8 +126,8 @@ if (isset($_POST['forminscription'])) {
                      <label for="form-email">Comfirm your email</label>
                      <i class="fas fa-envelope prefix grey-text"></i>
                      <input type="text" class="form-control" id="email2" name="email2" value="<?php if (isset($email2)) {
-                                                                                                            echo $email2;
-                                                                                                         } ?>" />
+                                                                                                   echo $email2;
+                                                                                                } ?>" />
                   </div>
 
                   <div class="md-form">
@@ -220,16 +144,16 @@ if (isset($_POST['forminscription'])) {
                      <input type="text" class="form-control" id="password2" name="password2" />
                   </div>
                   <div class="text-center mt-4">
-                     <button class="btn btn-light-blue">Submit</button>
+                     <button class="btn btn-light-blue" name="forminscription" >Submit</button>
                      <i class="fas fa-paper-plane"></i>
                   </div>
 
-                  <div class ="text-center mt-4">
-                  <?php
-                   if (isset($erreur)) {
-                  echo '<font color="red">' . $erreur . "</font>";
+                  <div class="text-center mt-4">
+                     <?php
+                     if (isset($erreur)) {
+                        echo '<font color="red">' . $erreur . "</font>";
                      }
-                  ?>
+                     ?>
                   </div>
                </form>
 
@@ -237,9 +161,10 @@ if (isset($_POST['forminscription'])) {
 
 
          </div>
-        
+
    </section>
 
+   </div>
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
