@@ -19,20 +19,21 @@
   <body>
   <nav class="navbar navbar-dark bg-dark d-flex justify-content-around">
       <!-- Navbar content -->
-      <div><img id="logo" src="./pictures/Logo.png" alt="logo" srcset=""></div>
+     
       <a button href="" class="active">Search</a>
       <a href="register.php" style="color:crimson;">Register</a>
       <a href="login.php" style="color:crimson;">Log in</a>
     </nav>
-   
-   
-    <div>
-        <div id="home">
-          <p>The theater</p>
-             <h1>The theater</h1>
-         
-        </div>
+
+
+    <div class="container-fluid">
+    <div class="col-sm-2">
+         <img id="logo" src="./pictures/Logo.png" alt="logo" srcset="">
+      </div>
+     
       
+
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   

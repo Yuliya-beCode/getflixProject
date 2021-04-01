@@ -63,27 +63,25 @@ if (isset($_POST['forminscription'])) {
 </head>
 
 <body>
- 
+
    <nav class="navbar navbar-dark bg-dark d-flex justify-content-around">
       <!-- Navbar content -->
-      <div><img id="logo" src="./pictures/Logo.png" alt="logo" srcset=""></div>
+
       <a button href="index.php" style="color: crimson;">Welcome Page</a>
       <a href="register.php" class="active">Register</a>
       <a href="login.php" style="color: crimson;">Log in</a>
    </nav>
 
    <div class="container-fluid">
-   <section class="section pb-5">
-
 
       <h2 class="section-heading h1 pt-4 text-white text-center">Registration</h2>
 
       <div class="row d-flex justify-content-center">
 
-
-         <div class="col-8 ">
-
-
+      <div class="col-sm-2">
+         <img id="logo" src="./pictures/Logo.png" alt="logo" srcset="">
+      </div>
+         <div class="col-sm-8">
             <div class="card">
                <form method="POST" action="" class="card-body">
                   <div class="form-header">
@@ -144,7 +142,7 @@ if (isset($_POST['forminscription'])) {
                      <input type="text" class="form-control" id="password2" name="password2" />
                   </div>
                   <div class="text-center mt-4">
-                     <button class="btn btn-light-blue" name="forminscription" >Submit</button>
+                     <button class="btn btn-light-blue" name="forminscription">Submit</button>
                      <i class="fas fa-paper-plane"></i>
                   </div>
 
@@ -158,15 +156,11 @@ if (isset($_POST['forminscription'])) {
                </form>
 
             </div>
-
-
          </div>
-
-   </section>
-
+      </div>
    </div>
 
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
 </body>

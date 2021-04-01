@@ -60,25 +60,17 @@ if (!empty($_SESSION['user'])) {
   <body>
     <nav class="navbar navbar-dark bg-dark d-flex justify-content-around">
       <!-- Navbar content -->
-      <div><img id="logo" src="./pictures/Logo.png" alt="logo" srcset=""></div>
       <a button href="index.php" style="color: crimson;">Welcome Page</a>
       <a href="register.php" style="color: crimson;">Register</a>
       <a href="login.php" class="active">Log in</a>
     </nav>
 
-
-    <div class="container-fluid">
-
-      <section class="section pb-5">
-
-
-        <br>
-        <br>
-
-        <div class="row">
-
-
-          <div class="col-8 offset-2">
+    <div class="container-fluid mt-5">
+    <div class="row d-flex justify-content-center">
+    <div class="col-sm-2">
+         <img id="logo" src="./pictures/Logo.png" alt="logo" srcset="">
+      </div>
+          <div class="col-sm-8">
 
 
             <div class="card">
@@ -118,14 +110,8 @@ if (!empty($_SESSION['user'])) {
                 echo $error;
               } ?>
             </div>
-
-
-          </div>
-        </div>
-      </section>
-
     </div>
-
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   </body>
