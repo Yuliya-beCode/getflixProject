@@ -9,14 +9,10 @@ header {
     border-radius: 5px;
     box-shadow: 3px 3px rgb(112, 112, 121);
     height: 100px;
-    color :black
-    
-    
+    color :black;
     }
-    
-    
+
     body {
-    
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background-color: whitesmoke;
     position: relative;
@@ -27,11 +23,11 @@ header {
     h1 {
         margin-left: 20px;
     }
-    
+
     h2 {
         margin-left: 20px;
     }
-    
+
     #logout {
         font-style: italic;
         margin-bottom: 15px;

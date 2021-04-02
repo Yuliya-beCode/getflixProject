@@ -23,6 +23,7 @@
       <a button href="" class="active">Search</a>
       <a href="register.php" style="color:crimson;">Register</a>
       <a href="login.php" style="color:crimson;">Log in</a>
+      <a href="logout.php" style="color:crimson;">Log out</a>
     </nav>
 
 
