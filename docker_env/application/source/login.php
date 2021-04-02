@@ -48,9 +48,7 @@ if (!empty($_SESSION['user'])) {
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="shortcut icon" href="./pictures/Logo.png">
-    
-    <link rel="shortcut icon" href="./pictures/Logo.png">
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
@@ -62,16 +60,25 @@ if (!empty($_SESSION['user'])) {
   <body>
     <nav class="navbar navbar-dark bg-dark d-flex justify-content-around">
       <!-- Navbar content -->
-      <img id="logo" src="./pictures/Logo.png" alt="logo" srcset="">
+      <div><img id="logo" src="./pictures/Logo.png" alt="logo"></div>
       <a button href="index.php" style="color: crimson;">Welcome Page</a>
       <a href="register.php" style="color: crimson;">Register</a>
       <a href="login.php" class="active">Log in</a>
     </nav>
 
-    <div class="container-fluid mt-5">
-    <div class="row d-flex justify-content-center">
-   
-          <div class="col-sm-8">
+
+    <div class="container-fluid">
+
+      <section class="section pb-5">
+
+
+        <br>
+        <br>
+
+        <div class="row">
+
+
+          <div class="col-8 offset-2">
 
 
             <div class="card">
@@ -99,20 +106,30 @@ if (!empty($_SESSION['user'])) {
                   <i class="fas fa-paper-plane"></i>
 
                 </div>
-
-                <div class="form-footer">
-                  <h5>
-                    <a href="register.php" class="stretched-link">Haven't Registered yet? Click here!</a>
-                  </h5>
-                </div>
-
-              </div>
-              <?php if (isset($error)) {
+                <form action="register.php">
+                
+                <button class="btn btn-light-blue"  class="stretched-link" >Haven't Registered yet? Click here! </button>
+            
+               </form>
+               
+                 <?php if (isset($error)) {
                 echo $error;
-              } ?>
+                 } ?>
+                
+              
+              </div>
+             
             </div>
+           
+
+          </div>
+
+        </div>
+
+      </section>
+     
     </div>
-    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   </body>
