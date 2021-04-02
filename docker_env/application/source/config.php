@@ -12,4 +12,3 @@ try {
     exit("Error: " . $e->getMessage());
 }
 ?>
-
