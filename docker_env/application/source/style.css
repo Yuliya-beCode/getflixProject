@@ -64,3 +64,18 @@ opacity: 0.8;
 display: flex;
 
 }
+
+.video {
+  /*margin: auto;*/
+  display: flex;
+  flex-direction: coulumn;
+ /* justify-content: center;*/
+ align-items: center;
+}
+
+.vid {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
