@@ -17,7 +17,7 @@ if ($_SESSION['user']['role'] == 'user') {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Comments</title>
     <link rel="stylesheet" href="style2.css" type="text/css" />
 </head>
 <body>
@@ -34,7 +34,7 @@ if ($_SESSION['user']['role'] == 'user') {
    
   
 
-    <h1>Welcome to the <?php echo $_SESSION['user']['username']; ?> Page</h1>
+    <h1>Welcome to the backend Comments Page</h1>
      
     <div id="profile">
         <h2>Your Username is: <?php echo  "<u>". $_SESSION['user']['username']."</u>"; ?> and Your Role is :<?php echo "<u>". $_SESSION['user']['role']."</u>"; ?></h2>
@@ -44,20 +44,12 @@ if ($_SESSION['user']['role'] == 'user') {
     <table id="table">
     <tr>
         <th>Id</th>
-        <th>firstname</th>
-        <th>lastname</th>
-        <th>username</th>
-        <th>email</th>
-        <th>role</th>
-        <th>operation</th>
-    </tr>
+        <th>Comment</th>
        
-
-
-
-
+      
+    </tr>
+    
 <?php
-
 //connect to database
 $conn = mysqli_connect("database", "root", "root", "GetFlix");
 
@@ -67,20 +59,16 @@ if ($conn->connect_error) {
 }
 
 //select en insert database data into html 
-$sql = "SELECT id, firstname, lastname, username, email, role FROM user ORDER BY id";
+$sql = "SELECT id, comment FROM comments ORDER BY id";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     
 while($row = $result->fetch_assoc()){
 echo "<tr>";
 echo"<td>" . $row["id"]. "</td>";
-echo"<td>" . $row["firstname"] . "</td>";
-echo"<td>". $row["lastname"]."</td>";
-echo"<td>". $row["username"]."</td>";
-echo"<td>". $row["email"]."</td>";
-echo"<td>". $row["role"]."</td>";
+echo"<td>" . $row["comment"] . "</td>";
 //delete a row from the database 
-echo"<td><a href = delete.php?id=".$row['id'].">delete</a></td>";
+echo"<td><a href = delete2.php?id=".$row['id'].">delete</a></td>";
 echo"</tr>";
 }
 }
