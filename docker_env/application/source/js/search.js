@@ -129,10 +129,8 @@ function getDocs() {
 }
 
 
-
 function movieSection(movies) {
     return movies.map(movie => {
-
         let img_poster = `${posters}${movie.poster_path}`;
 
         if (movie.poster_path == null) {
@@ -140,14 +138,16 @@ function movieSection(movies) {
             img_poster = "./placeholder.png";
         }
         return `<div class="col mb-5">
-                    <div class="card">
-                        <img src=${img_poster} class="card-img-top" alt="${movie.title} poster"> 
-                        <div class="card-body p-1">
-                            <h5 class="card-title text-center">${movie.title}</h5>
-                            <p hidden>${movie.id}</p>
-                        </div>
-                    </div>
-                </div>`;
+                        <a href="/info.php?id=${movie.id}" target="_blank">
+                            <div class="card">
+                                <img src=${img_poster} class="card-img-top" alt="${movie.title} poster"> 
+                                <div class="card-body p-1">
+                                    <h5 class="card-title text-center">${movie.title}</h5>
+                                    <p hidden>${movie.id}</p>
+                                </div>
+                            </div>
+                       </a> 
+                   </div>`;
     })
 }
 

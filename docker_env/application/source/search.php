@@ -14,6 +14,16 @@
 </head>
 
 <body>
+
+<nav class="navbar navbar-dark bg-dark d-flex justify-content-around">
+    <!-- Navbar content -->
+    <img id="logo" src="pictures/Logo.png" alt="logo" srcset="">
+    <a href="index.php" style="color:white;">Welcome Page</a>
+    <a href="register.php" style="color:white;">Register</a>
+    <a href="login.php" style="color:white;">Log in</a>
+    <a href="logout.php" style="color:white;">Log out</a>
+</nav>
+
     <header class="container">
         <div class="d-flex justify-content-end">
             <div class="searchbar">
@@ -57,7 +67,7 @@
     </main>
 </body>
 <!--search functions-->
-<script src="search.js"></script>
+<script src="js/search.js"></script>
 <!-- Font Awesome JS -->
 <script src="https://kit.fontawesome.com/770384ac45.js" crossorigin="anonymous"></script>
 <!-- Bootstrap JS -->

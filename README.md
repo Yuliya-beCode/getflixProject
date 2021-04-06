@@ -13,6 +13,13 @@ Our Project Team consists of
 * Frontend Developer - @robbertklockaerts
 * Project Manager - @Yuliya-beCode
 
+Tasks allocation
+
+| Heading 1 | Heading 2 | Heading 3 |  
+|-----------|:-----------:|-----------:|  
+| Cell A1 | Cell A2 | Cell A3 |  
+| Cell B1 | Cell B2 | Cell B3 |
+
 If you have any questions in regards to our project, please do not hesitate to contact us directly on GitHub
 
 # What

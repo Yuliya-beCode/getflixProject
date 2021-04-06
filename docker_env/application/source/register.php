@@ -59,7 +59,7 @@ if (isset($_POST['forminscription'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="./style.css"/>
     <script src="https://kit.fontawesome.com/770384ac45.js" crossorigin="anonymous"></script>
     <title>The theater</title>
 </head>
@@ -69,22 +69,19 @@ if (isset($_POST['forminscription'])) {
 <nav class="navbar navbar-dark bg-dark d-flex justify-content-around">
     <!-- Navbar content -->
     <div><img id="logo" src="./pictures/Logo.png" alt="logo" srcset=""></div>
-    <a href="index.php" style="color: crimson;">Welcome Page</a>
+    <a href="index.php" style="color: white;">Welcome Page</a>
     <a href="register.php" class="active">Register</a>
-    <a href="login.php" style="color: crimson;">Log in</a>
+    <a href="login.php" style="color: white;">Log in</a>
 </nav>
 
 <div class="container-fluid">
-    <section class="section pb-5">
 
 
         <h2 class="section-heading h1 pt-4 text-white text-center">Registration</h2>
 
         <div class="row d-flex justify-content-center">
 
-
-            <div class="col-8 ">
-
+            <div class="col-sm-8">
 
                 <div class="card">
                     <form method="POST" action="" class="card-body">
@@ -94,67 +91,83 @@ if (isset($_POST['forminscription'])) {
 
                         <div class="md-form">
                             <i class="fas fa-user prefix grey-text"></i>
+
                             <label for="form-firstname">First Name</label>
 
                             <input type="text" name="firstname" id="firstname" class="form-control"
                                    value="<?php if (isset($firstname)) {
                                        echo $firstname;
                                    } ?>"/>
+
                         </div>
 
                         <div class="md-form">
                             <i class="fas fa-user prefix grey-text"></i>
+
                             <label for="form-lastname">Last Name</label>
 
                             <input type="text" id="lastname" class="form-control" name="lastname"
                                    value="<?php if (isset($lastname)) {
                                        echo $lastname;
                                    } ?>"/>
+
                         </div>
 
                         <div class="md-form">
                             <i class="fas fa-user prefix grey-text"></i>
+
                             <label for="form-nickname">Nickname</label>
 
                             <input type="text" id="username" class="form-control" name="username"
                                    value="<?php if (isset($username)) {
                                        echo $username;
                                    } ?>"/>
+
                         </div>
 
                         <div class="md-form">
                             <i class="fas fa-envelope prefix grey-text"></i>
+
                             <label for="form-email">Your email</label>
 
                             <input type="text" class="form-control" id="email" name="email"
                                    value="<?php if (isset($email)) {
                                        echo $email;
                                    } ?>"/>
+
+
                         </div>
 
                         <div class="md-form">
                             <i class="fas fa-envelope prefix grey-text"></i>
-                            <label for="form-email">Comfirm your email</label>
+
+                            <label for="form-email" style="width: max-content"">Comfirm your email</label>
 
                             <input type="text" class="form-control" id="email2" name="email2"
                                    value="<?php if (isset($email2)) {
                                        echo $email2;
                                    } ?>"/>
+
                         </div>
 
                         <div class="md-form">
                             <i class="fas fa-key"></i>
                             <label for="form-password">Password</label>
-
                             <input type="text" class="form-control" id="password" name="password"/>
+
                         </div>
+
+
+
 
                         <input type="hidden" name="forminscription" value="any"/>
 
                         <div class="md-form">
                             <i class="fas fa-key"></i>
-                            <label for="for-confirm">Confirm Password</label>
+                            <label for="for-confirm" style="width: max-content">Confirm Password</label>
                             <input type="text" class="form-control" id="password2" name="password2"/>
+
+
 
 
                         </div>
@@ -166,7 +179,7 @@ if (isset($_POST['forminscription'])) {
                         <div class="text-center mt-4" style="color: #e74c3c">
                             <?php
                             if (isset($erreur)) {
-                                echo $error;
+                                echo $erreur;
                             }
                             ?>
                         </div>
@@ -177,7 +190,7 @@ if (isset($_POST['forminscription'])) {
 
             </div>
 
-    </section>
+
 
 </div>
 

@@ -66,21 +66,19 @@ if (!empty($_SESSION['user'])) {
     <nav class="navbar navbar-dark bg-dark d-flex justify-content-around">
         <!-- Navbar content -->
         <div><img id="logo" src="./pictures/Logo.png" alt="logo" srcset=""></div>
-        <a button href="index.php" style="color: crimson;">Welcome Page</a>
-        <a href="register.php" style="color: crimson;">Register</a>
+        <a button href="index.php" style="color: white;">Welcome Page</a>
+        <a href="register.php" style="color: white;">Register</a>
         <a href="login.php" class="active">Log in</a>
     </nav>
 
     <div class="container-fluid">
-        <section class="section pb-5">
-
 
             <h2 class="section-heading h1 pt-4 text-white text-center">Log in</h2>
 
             <div class="row d-flex justify-content-center">
 
 
-                <div class="col-8 ">
+                <div class="col-sm-8 ">
 
 
                     <div class="card">
@@ -107,8 +105,8 @@ if (!empty($_SESSION['user'])) {
 
                             <div class="md-form">
                                 <div class="mb-1">
-                                    <label class="form-label">Select User Type:</label>
-                                </div>
+                                    <label class="form-label" style="width: max-content">Select User Type:</label>
+
                                 <select class="form-select mb-3"
                                         name="role"
                                         aria-label="Default select example">
@@ -116,6 +114,7 @@ if (!empty($_SESSION['user'])) {
                                     <option value="admin">Admin</option>
                                     <option value="user">User</option>
                                 </select>
+                                </div>
                             </div>
 
                             <div class="text-center mt-4">
