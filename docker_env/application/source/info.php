@@ -1,11 +1,20 @@
 <?php
+
+// API DOCS: https://developers.themoviedb.org/3/movies/get-movie-videos
+
+// GET MOVIE INFO: https://api.themoviedb.org/3/movie/791373?api_key=04c35731a5ee918f014970082a0088b1&language=en-US
+
+
+
+
 $domain = 'https://api.themoviedb.org';
 $API_KEY = '04c35731a5ee918f014970082a0088b1';
-$id = $_GET['id'];
+$id = $_GET['movie'];
 $video_key = false;
 
 //get information from https://api.themoviedb.org/3/movie/791373/videos?api_key=04c35731a5ee918f014970082a0088b1&language=en-US
-$c = curl_init($domain . '/3/movie/' . $id . '/videos?api_key='.$API_KEY.'&language=en-US');
+$c = curl_init($domain . '/3/movie/' . $id . '/videos?api_key=' . $API_KEY . '&language=en-US');
+
 
 // return in the version of string
 // true> get the value of the request
@@ -14,13 +23,16 @@ curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
 //string to json
 $response = json_decode(curl_exec($c));
 
+
 //control if the request got successfully
 if ($response->success !== false) $video_key = $response->results[0]->key;
 
 // getting info of the movie from https://api.themoviedb.org/3/movie/587807?api_key=04c35731a5ee918f014970082a0088b1&language=en-US
-$c_info = curl_init($domain . '/3/movie/' . $id . '?api_key='.$API_KEY.'&language=en-US');
+$c_info = curl_init($domain . '/3/movie/' . $id . '?api_key=' . $API_KEY . '&language=en-US');
 curl_setopt($c_info, CURLOPT_RETURNTRANSFER, true);
 $response_info = json_decode(curl_exec($c_info));
+
+
 
 ?>
 
@@ -71,13 +83,13 @@ $response_info = json_decode(curl_exec($c_info));
                 <div class="ibox-content d-flex">
                     <figure>
                         <?php
-                        if($video_key !== false && $video_key !== null)
-                        echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/'.$video_key.'"
+                        if ($video_key !== false && $video_key !== null)
+                            echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/' . $video_key . '"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>';
                         else echo '<h4 class="text-danger">No video</h4>'
-                                ?>
+                        ?>
                     </figure>
                 </div>
             </div>
@@ -94,9 +106,13 @@ $response_info = json_decode(curl_exec($c_info));
 
                     <p><i class="fa fa-clock-o"></i> <b>Release date</b> <?php echo $response_info->release_date ?></p>
 
-                    <p><i class="fa fa-clock-o"></i> <b>Homepage</b> <?php echo $response_info->homepage ?></p>
+                    <p><i class="fa fa-clock-o"></i>
+                        <a href="<?php echo $response_info->homepage ?>" target="_blank"><b>Homepage</b></a></p>
 
-                    <h5><?php echo $response_info-> genres?></h5>
+                    <h5>Genres:</h5>
+                    <ul><?php foreach ($response_info->genres as $item){
+                        echo '<li>'.$item->name.'</li>';
+                        } ?></ul>
 
                     <p>
                         <?php echo $response_info->overview ?>
