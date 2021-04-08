@@ -5,7 +5,6 @@
 // GET MOVIE INFO: https://api.themoviedb.org/3/movie/791373?api_key=04c35731a5ee918f014970082a0088b1&language=en-US
 
 
-
 $domain = 'https://api.themoviedb.org';
 $API_KEY = '04c35731a5ee918f014970082a0088b1';
 $id = $_GET['movie'];
@@ -117,7 +116,7 @@ date_default_timezone_set("Europe/Brussels");
                     <div class="row m-t-md">
                         <div class="col-md-9">
                             <?php require_once 'process.php';?>
-                            <?php 
+                            <?php
                                 $mysqli = new mysqli('database','root','root','GetFlix') or die(mysqli_error($mysqli));
                                 $result = $mysqli->query("SELECT * FROM comments") or die($mysqli->error);
                                ?>
@@ -136,9 +135,9 @@ date_default_timezone_set("Europe/Brussels");
                                     <td><?php echo $row['date']; ?></td>
                                     <td><?php echo $row['message']; ?></td>
                                     <td>
-                                        <a href="info.php?edit=<?php echo $row['id']; ?>" 
+                                        <a href="info.php?edit=<?php echo $row['id']; ?>"
                                         class="btn btn-info">Edit</a>
-                                        <a href="info.php?delete=<?php echo $row['id']; ?>" 
+                                        <a href="info.php?delete=<?php echo $row['id']; ?>"
                                         class="btn btn-danger">Delete </a>
                                     </td>
                                 </tr>
@@ -172,7 +171,7 @@ date_default_timezone_set("Europe/Brussels");
                                 }
                                 echo "<br>";
                                 echo date('Y-m-d H:i:s');
-                                
+
                                 ?>
                                 </div>
                             </form>

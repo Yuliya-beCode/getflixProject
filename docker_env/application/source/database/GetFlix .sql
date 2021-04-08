@@ -29,10 +29,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `comments` (
-  `id` int(11) NOT NULL,
-  `uid` varchar(128) CHARACTER SET latin1 DEFAULT NULL,
-  `date` datetime DEFAULT current_timestamp(),
-  `message` text CHARACTER SET latin1 NOT NULL
+                            `id` int(11) NOT NULL,
+                            `uid` varchar(128) CHARACTER SET latin1 DEFAULT NULL,
+                            `date` datetime DEFAULT current_timestamp(),
+                            `message` text CHARACTER SET latin1 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -50,13 +50,13 @@ INSERT INTO `comments` (`id`, `uid`, `date`, `message`) VALUES
 --
 
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
-  `firstname` varchar(15) NOT NULL,
-  `lastname` varchar(100) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` text NOT NULL,
-  `role` enum('guest','admin','user','') NOT NULL
+                        `id` int(11) NOT NULL,
+                        `firstname` varchar(15) NOT NULL,
+                        `lastname` varchar(100) NOT NULL,
+                        `username` varchar(100) NOT NULL,
+                        `email` varchar(100) NOT NULL,
+                        `password` text NOT NULL,
+                        `role` enum('guest','admin','user','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -77,13 +77,13 @@ INSERT INTO `user` (`id`, `firstname`, `lastname`, `username`, `email`, `passwor
 -- Indexen voor tabel `comments`
 --
 ALTER TABLE `comments`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Indexen voor tabel `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT voor geëxporteerde tabellen
@@ -93,13 +93,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT voor een tabel `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT voor een tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

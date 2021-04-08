@@ -289,7 +289,7 @@ async function getSearch(search, category = [], page = 1) {
 
                     if (movie.poster_path == null) {
                         // console.log(movie.title);
-                        img_poster = "./placeholder.png";
+                        img_poster = "js/placeholder.png";
                     }
                     return `<div class="col mb-5">
                                 <div id="movie_${moviesFound}" class="card" onclick="showDetails(${movie.id})">

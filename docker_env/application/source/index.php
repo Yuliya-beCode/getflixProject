@@ -9,7 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="searchbar_standalone.css">
+
+
     <link rel="stylesheet" href="index.css">
     <title>Movie Search module</title>
 </head>
@@ -25,19 +26,33 @@
     <a href="logout.php" style="color:white;">Log out</a>
 </nav>
 
+
 <div class="container-fluid">
-<div class="row align-items-center" style="min-height: calc(100vh - 66px);">
-    <div class="col-lg-6 mx-auto">
-        <div class="input-group">
-        <form id="searchbar" class="searchbar" method="get" action="search.php">
-            <label class="search_label" for="search_input">Search :</label>
-            <input id="search_input" class="search_input" type="text" name="search" onkeypress="clickPress(event)">
-            <button id="btn_search" type="submit" aria-label="search" class="search_icon"><i class="fas fa-search"></i>
-            </button>
-        </form>
+
+
+    <div class="row align-items-center" style="min-height: calc(100vh - 66px);">
+
+
+        <div class="col-lg-6 mx-auto">
+            <div class="input-group">
+
+                <h1 class="text-center" style="color: white">Welcome to the Theatre. <br> Unlimited movies, TV shows,
+                    and more.</h1>
+
+                <h3 class="text-center" style="color: white"> Ready to watch? Enter a keyword of your favorite
+                    movie</h3>
+
+                <form id="searchbar" class="searchbar" method="get" action="search.php">
+                    <label class="search_label" for="search_input">Search :</label>
+                    <input id="search_input" class="search_input" type="text" name="search"
+                           onkeypress="clickPress(event)">
+                    <button id="btn_search" type="submit" aria-label="search" class="search_icon"><i
+                                class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
     </div>
-</div>
-</div>
 </div>
 
 </body>
