@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+  ## PHP-Apache service
+  server:
+    build:
+      context: ./application
+    container_name: becode-webserver
+    ports:
+      - 80:80
+    restart: always
+    volumes:
+      - ./application/source:/var/www/html
+    env_file:
+      - ./docker.env
+    networks:
+      - becode
+
+  ## Mariadb service 
+  database:
+    image: mariadb:10.4.2
+    container_name: becode-database
+    restart: always
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d/
+      - becode_data:/var/lib/mysql
+    env_file:
+      - ./docker.env
+    networks:
+      - becode
+
+  ## PhpMyAdmin
+  myadmin:
+    image: phpmyadmin/phpmyadmin:4.8.1
+    container_name: becode-phpmyadmin
+    ports:
+      - 8081:80
+    restart: always
+    env_file:
+      - ./docker.env
+    depends_on:
+      - database
+    networks:
+      - becode
+
+networks:
+  becode:
+
+volumes:
+  becode_data:
