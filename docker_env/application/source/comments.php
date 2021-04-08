@@ -44,7 +44,10 @@ if ($_SESSION['user']['role'] == 'user') {
     <table id="table">
     <tr>
         <th>Id</th>
+        <th>User</th>
+        <th>Date</th>
         <th>Comment</th>
+
        
       
     </tr>
@@ -59,20 +62,22 @@ if ($conn->connect_error) {
 }
 
 //select en insert database data into html 
-$sql = "SELECT id, comment FROM comments ORDER BY id";
+$sql = "SELECT id, uid, date, message FROM comments ORDER BY id";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     
 while($row = $result->fetch_assoc()){
 echo "<tr>";
 echo"<td>" . $row["id"]. "</td>";
-echo"<td>" . $row["comment"] . "</td>";
+echo"<td>" . $row["uid"] . "</td>";
+echo"<td>" . $row["date"] . "</td>";
+echo"<td>" . $row["message"] . "</td>";
+
 //delete a row from the database 
 echo"<td><a href = delete2.php?id=".$row['id'].">delete</a></td>";
 echo"</tr>";
 }
 }
-
 ?>
 </table>
 <footer>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: database:3306
--- Gegenereerd op: 06 apr 2021 om 10:33
+-- Gegenereerd op: 08 apr 2021 om 06:27
 -- Serverversie: 10.4.2-MariaDB-1:10.4.2+maria~bionic
 -- PHP-versie: 7.2.5
 
@@ -30,17 +30,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `comments` (
   `id` int(11) NOT NULL,
-  `comment` text NOT NULL,
-  `parent_id` int(11) DEFAULT NULL
+  `uid` varchar(128) CHARACTER SET latin1 DEFAULT NULL,
+  `date` datetime DEFAULT current_timestamp(),
+  `message` text CHARACTER SET latin1 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `comments`
 --
 
-INSERT INTO `comments` (`id`, `comment`, `parent_id`) VALUES
-(1, 'heloo', NULL),
-(2, 'how about this movie?', NULL);
+INSERT INTO `comments` (`id`, `uid`, `date`, `message`) VALUES
+(16, 'anon', '2021-04-07 00:00:00', 'edited comment'),
+(63, NULL, '2021-04-08 05:52:44', 'test');
 
 -- --------------------------------------------------------
 
@@ -60,8 +61,7 @@ CREATE TABLE `user` (
 
 --
 -- Gegevens worden geëxporteerd voor tabel `user`
-
--- password for admin rob guest jane and john are all 'testing'
+--
 
 INSERT INTO `user` (`id`, `firstname`, `lastname`, `username`, `email`, `password`, `role`) VALUES
 (7, 'Layeux', 'Gael', 'lordofchicken', 'gael.layeux@poulet.org', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'guest'),
@@ -93,7 +93,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT voor een tabel `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT voor een tabel `user`

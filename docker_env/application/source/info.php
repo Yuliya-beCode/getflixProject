@@ -6,7 +6,6 @@
 
 
 
-
 $domain = 'https://api.themoviedb.org';
 $API_KEY = '04c35731a5ee918f014970082a0088b1';
 $id = $_GET['movie'];
@@ -32,10 +31,8 @@ $c_info = curl_init($domain . '/3/movie/' . $id . '?api_key=' . $API_KEY . '&lan
 curl_setopt($c_info, CURLOPT_RETURNTRANSFER, true);
 $response_info = json_decode(curl_exec($c_info));
 
-
-
+date_default_timezone_set("Asia/Dubai");
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,7 +60,7 @@ $response_info = json_decode(curl_exec($c_info));
     <!-- Navbar content -->
     <img id="logo" src="./pictures/Logo.png" alt="logo" srcset=""/>
 
-    <a href="./application/source/index.php" style="color: rgb(247, 240, 241)">Welcome Page</a>
+    <a href="index.php" style="color: rgb(247, 240, 241)">Welcome Page</a>
     <a href="register.php" style="color:rgb(247, 240, 241)">Register</a>
     <a href="login.php" style="color:rgb(247, 240, 241)">Log in</a>
 
@@ -119,7 +116,66 @@ $response_info = json_decode(curl_exec($c_info));
                     </p>
                     <div class="row m-t-md">
                         <div class="col-md-9">
-                            <h5><strong>28</strong> Comments</h5>
+                            <?php require_once 'process.php';?>
+                            <?php 
+                                $mysqli = new mysqli('database','root','root','GetFlix') or die(mysqli_error($mysqli));
+                                $result = $mysqli->query("SELECT * FROM comments") or die($mysqli->error);
+                               ?>
+                            <div>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>date</th>
+                                            <th>message</th>
+                                            <th>action</th>
+                                        </tr>
+                                    </thead>
+                            <?php
+                                while ($row= $result->fetch_assoc()):?>
+                                <tr>
+                                    <td><?php echo $row['date']; ?></td>
+                                    <td><?php echo $row['message']; ?></td>
+                                    <td>
+                                        <a href="info.php?edit=<?php echo $row['id']; ?>" 
+                                        class="btn btn-info">Edit</a>
+                                        <a href="info.php?delete=<?php echo $row['id']; ?>" 
+                                        class="btn btn-danger">Delete </a>
+                                    </td>
+                                </tr>
+                                <?php endwhile; ?>
+                                </table>
+                            </div>
+                                <?php
+                                function pre_r($array){
+                                    echo '<pre>';
+                                    print_r($array);
+                                    echo '</pre>';
+                                }
+                                ?>
+                            <form action="process.php" method="POST">
+                            <input type='hidden' name='id' value="<?php echo $id; ?>">
+                                <div class="form-group">
+                                <input type="text" name="message" class="form-control" value="<?php echo $message;?>" placeholder="enter your comment">
+                                <input type='hidden' name='date' class="form-control" value=".date('Y-m-d H:i:s')."'>
+                                </div>
+                                <div class="form-group">
+                                    <?php
+                                    if ($update == true):
+                                    ?>
+                                    <button type='submit' class="btn btn-info" name='update'>Update</button>
+                                    <?php else: ?>
+                                <button type="submit" name="save">Save</button>
+                                <?php endif ?>
+                                <?php echo "<br>";
+                                if(date_default_timezone_get()) {
+                                    echo "default timezone: ".date_default_timezone_get();
+                                }
+                                echo "<br>";
+                                echo date('Y-m-d H:i:s');
+                                
+                                ?>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
