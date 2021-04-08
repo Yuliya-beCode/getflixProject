@@ -1,0 +1,12 @@
+html, body {
+    background: url(pictures/jake-hills-theater.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.navbar {
+    padding-left: 15px;
+    padding-right: 15px;
+}
