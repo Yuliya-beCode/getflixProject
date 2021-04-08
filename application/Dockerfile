@@ -14,3 +14,4 @@ RUN curl --silent --show-error https://getcomposer.org/installer | \
 ## Enable PHP and Apache modules
 RUN docker-php-ext-install pdo pdo_mysql mysqli gettext
 RUN a2enmod rewrite headers ssl
+

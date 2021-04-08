@@ -6,9 +6,30 @@ html {
     padding: 0;
     background: #202020 !important;
 }
-ul, p{
+
+ul,
+p {
     margin: 0;
 }
+
+.card {
+    cursor: pointer;
+    overflow: hidden;
+    -webkit-transition: 600ms -webkit-filter linear, transform 300ms;
+    -moz-transition: 600ms -moz-filter linear, transform 300ms;
+    -moz-transition: 600ms filter linear, transform 300ms;
+    -ms-transition: 600ms -ms-filter linear, transform 300ms;
+    -o-transition: 600ms -o-filter linear, transform 300ms;
+    transition: 600ms filter linear, 300ms -webkit-filter linear, transform 300ms;
+}
+
+.card:hover {
+    filter: grayscale(70%) brightness(150%);
+    -webkit-filter: grayscale(70%) brightness(150%);
+    transform: scale(1.03);
+}
+
+
 .searchbar button {
     background: none;
     border: none;
@@ -82,7 +103,7 @@ ul, p{
     display: inline;
     list-style: none;
     /* pour enlever les puces sur IE7 */
-    margin: 2.5px;
+    /* margin: 2.5px; */
     margin-bottom: 15px;
 }
 
@@ -91,17 +112,24 @@ ul, p{
     background-color: #353b48;
     border-radius: 10px;
     padding: 5px 10px;
+    margin: 0 2.5px;
     border: none;
 }
 
 #filters button:hover {
     background-color: #555c6b;
 }
+
 #filters button.active {
     background-color: #973535;
 }
 
-#switch{
+#filters button.active:hover {
+    color: white;
+    background-color: #c24e4e;
+}
+
+#switch {
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 5px;
@@ -109,26 +137,40 @@ ul, p{
     /* border-radius: 10px; */
 }
 
-#switch_ctrl{
+#switch_ctrl {
     margin-right: 20px;
     background-color: rgb(48, 48, 48);
     border-radius: 10px;
-    
     overflow: hidden;
-    /* margin: 5px; */
 }
-#switch_ctrl:first-child{
+
+#switch_ctrl:first-child {
     padding-left: 10px;
 }
 
-#switch_ctrl button{
+#switch_ctrl button {
     color: black;
     background-color: rgb(119, 119, 119);
     border-radius: 0px;
-    border-left:solid rgb(48, 48, 48) 3px;
+    border-left: solid rgb(48, 48, 48) 3px;
+    margin: 0px;
 }
 
 #switch_ctrl button.active {
     color: white;
     background-color: #973535;
+}
+
+#switch_ctrl button.active:hover {
+    color: white;
+    background-color: #c24e4e;
+}
+
+#result {
+    margin-bottom: 20px;
+}
+
+#logo {
+    margin-top: 20px;
+    max-width: 70px;
 }

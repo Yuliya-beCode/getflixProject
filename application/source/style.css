@@ -31,13 +31,6 @@ h2 {
 }
 
 
-label {
-  display: inline-block;
-  width: 100px;
-  color: rgb(185, 172, 172);
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
 .active {
   background-color: crimson;
   color: white;
@@ -68,7 +61,7 @@ display: flex;
 .video {
   /*margin: auto;*/
   display: flex;
-  flex-direction: coulumn;
+  flex-direction: column;
  /* justify-content: center;*/
  align-items: center;
 }
@@ -78,4 +71,5 @@ display: flex;
   align-items: center;
   flex-direction: column;
 }
+
 
