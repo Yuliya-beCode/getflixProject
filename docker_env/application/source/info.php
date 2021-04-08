@@ -31,7 +31,7 @@ $c_info = curl_init($domain . '/3/movie/' . $id . '?api_key=' . $API_KEY . '&lan
 curl_setopt($c_info, CURLOPT_RETURNTRANSFER, true);
 $response_info = json_decode(curl_exec($c_info));
 
-date_default_timezone_set("Asia/Dubai");
+date_default_timezone_set("Europe/Brussels");
 ?>
 <!DOCTYPE html>
 <html lang="en">
