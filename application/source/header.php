@@ -1,11 +1,3 @@
-<?php
-if(session_status() == PHP_SESSION_NONE){
-session_start();
-}
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,5 +29,5 @@ session_start();
     <a href="login.php" style="color:crimson;">Log in</a>
     <a href="logout.php" style="color:crimson;">Log out</a>
 </nav>
-<div class="container">
+
 
