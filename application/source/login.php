@@ -9,6 +9,11 @@
 
         $_SESSION['auth'] = $user;
         $_SESSION['flash']['success'] = "Your are connected !";
+        if($_POST['remember']){
+            $remeber_token = str_random(250);
+$pdo->prepare('UPDATE FROM users SET remember_token')
+        }
+        die();
 
         header('Location: account.php');
 
@@ -18,6 +23,7 @@
     }
 }
 ?>
+
 
 <?php require('header.php'); ?>
 <h1>Login</h1>
@@ -31,8 +37,11 @@
         <div class="form-group">
             <label for="">Password</label>
             <input type="password" name="password" class="form-control" />
-
-
+          
+            <div class="form-group">
+        <label>
+        <input type="checkbox" name="remenber" value="1" /> Remember me.
+        </label>>
             <button type="submit" class="btn-primary">connection</button>
 
 </form>

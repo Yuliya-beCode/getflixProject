@@ -1,66 +1,56 @@
-<?php include 'header.php'; ?>
-<header class="container">
-    <div class="d-flex justify-content-end">
-        <div class="searchbar">
-            <label class="search_label" for="search">Search :</label>
-            <input id="search_input" class="search_input" type="text" name="search" placeholder="">
-            <button id="btn_search" class="search_icon"><i class="fas fa-search"></i></button>
-        </div>
-    </div>
-</header>
-<main class="container">
-    <div class="">
+<!DOCTYPE html>
+<html lang="en">
 
-        <div id="switch" class="">
-            <div id="filters" class="">
-                <ul class="d-flex flex-wrap">
-                    <li>
-                        <div id="switch_ctrl" class="d-flex justify-content-center">
-                            <p class="align-self-center px-2 text-light">Filter by :</p>
-                            <button type="button" id="" class="active">Top</button>
-                            <button type="button" id="" class="">Categories</button>
-                            <button type="button" id="" class="">Year</button>
-                        </div>
-                    </li>
-                    <li>
-                        <button type="button" id="trending" class="active">Trending</button>
-                    </li>
-                    <li>
-                        <button type="button" id="topPopular" class="">Most Popular</button>
-                    </li>
-                    <li>
-                        <button type="button" id="topRated" class="">Top Rated</button>
-                    </li>
-                    <li>
-                        <button type="button" id="action" class="">Action</button>
-                    </li>
-                    <li>
-                        <button type="button" id="comedy" class="">Comedy</button>
-                    </li>
-                    <li>
-                        <button type="button" id="horror" class="">Horror</button>
-                    </li>
-                    <li>
-                        <button type="button" id="romantic" class="">Romantic</button>
-                    </li>
-                    <li>
-                        <button type="button" id="docs" class="">Documentary</button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-12">
-            <p id="result" class="text-white">Movies</p>
-        </div>
-    </div>
-    <div id="movies">
-    </div>
-</main>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="searchbar_standalone.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Movie Search module</title>
+</head>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<body>
+
+<nav class="navbar navbar-dark bg-dark d-flex justify-content-around">
+    <!-- Navbar content -->
+    <img id="logo" src="pictures/Logo.png" alt="logo" srcset="">
+
+    <a href="register.php" style="color:white;">Register</a>
+    <a href="login.php" style="color:white;">Log in</a>
+    <a href="logout.php" style="color:white;">Log out</a>
+</nav>
+
+<div class="container-fluid">
+<div class="row align-items-center" style="min-height: calc(100vh - 66px);">
+    <div class="col-lg-6 mx-auto">
+        <div class="input-group">
+        <form id="searchbar" class="searchbar" method="get" action="search.php">
+            <label class="search_label" for="search_input">Search :</label>
+            <input id="search_input" class="search_input" type="text" name="search" onkeypress="clickPress(event)">
+            <button id="btn_search" type="submit" aria-label="search" class="search_icon"><i class="fas fa-search"></i>
+            </button>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+
+</body>
+<!--search functions-->
+<script src="js/search.js"></script>
+<!-- Font Awesome JS -->
 <script src="https://kit.fontawesome.com/770384ac45.js" crossorigin="anonymous"></script>
-<script src="js/search.js">
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
 </script>
 
-<?php require 'footer.php'; ?>
+</html>
