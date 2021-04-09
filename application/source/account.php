@@ -1,4 +1,9 @@
 <?php
+
+    session_start();
+
+?>
+<?php
 require 'function.php';
 logged_only();
 if (!empty($_POST)) {

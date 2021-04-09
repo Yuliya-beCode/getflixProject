@@ -1,4 +1,8 @@
+<?php
 
+    session_start();
+
+?>
 <?php
 if (!isset($_GET['movie']) or $_GET['movie'] == '') {
     header('Location: ./search.php');

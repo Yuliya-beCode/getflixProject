@@ -1,6 +1,11 @@
-<?php include('header.php');?>
+<?php
 
- 
+    session_start();
+
+?>
+ <?php include('header.php');?>
+
+
 
 
         <h1>Welcome to the <?php echo $_SESSION['users']['username']; ?> Page</h1>

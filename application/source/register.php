@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="style.css">
 
 <?php require_once('function.php'); ?>
-<?php session_start(); ?>
 <?php
 
 if (!empty($_POST)) {
@@ -40,15 +39,11 @@ if (!empty($_POST)) {
     }
 
     if (empty($errors)) {
-        $req = $pdo->prepare("INSERT INTO users SET username = ?, password = ?, email = ?, confirmation_token = ?");
+        $req = $pdo->prepare("INSERT INTO users SET username = ?, password = ?, email = ?");
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-        $token = str_random(60);
-        $req->execute([$_POST['username'], $password, $_POST['email'], $token]);
+        $req->execute([$_POST['username'], $password, $_POST['email']]);
 
-        $user_id = $pdo->lastInsertId();
-        mail($POST['email'], 'Confimation Token', "For validation click on this link\n\nhttp://localhost/confirm.php?id=$user_id&token=$token");
-        $_SESSION['flash']['success'] = 'A confirmation email has been sent to you';
-        exit();
+
     }
 }
 

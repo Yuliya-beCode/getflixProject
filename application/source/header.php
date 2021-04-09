@@ -1,9 +1,4 @@
 
-<?php
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,7 +74,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <?php endforeach; ?>
     <?php unset($_SESSION['flash']); ?>
 <?php endif; ?>
-
+</div>
 
 
 
