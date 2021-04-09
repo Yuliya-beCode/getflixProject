@@ -2,10 +2,10 @@
 -- version 4.8.1
 -- https://www.phpmyadmin.net/
 --
--- Host: database:3306
--- Gegenereerd op: 07 apr 2021 om 08:30
--- Serverversie: 10.4.2-MariaDB-1:10.4.2+maria~bionic
--- PHP-versie: 7.2.5
+-- Hôte : database:3306
+-- Généré le :  ven. 09 avr. 2021 à 13:00
+-- Version du serveur :  10.4.2-MariaDB-1:10.4.2+maria~bionic
+-- Version de PHP :  7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,83 +19,91 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `GetFlix`
+-- Base de données :  `GetFlix`
 --
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `comments`
+-- Structure de la table `comments`
 --
 
 CREATE TABLE `comments` (
   `id` int(11) NOT NULL,
-  `uid` varchar(128) CHARACTER SET latin1 NOT NULL,
-  `date` datetime NOT NULL,
+  `uid` varchar(128) CHARACTER SET latin1 DEFAULT NULL,
+  `date` datetime DEFAULT current_timestamp(),
   `message` text CHARACTER SET latin1 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Gegevens worden geëxporteerd voor tabel `comments`
+-- Déchargement des données de la table `comments`
 --
 
 INSERT INTO `comments` (`id`, `uid`, `date`, `message`) VALUES
-(1, 'anon', '2021-04-06 19:33:16', 'test'),
-(2, 'anon', '2021-04-06 19:33:53', 'i like this video, very funny!\r\n');
+(16, 'anon', '2021-04-07 00:00:00', 'edited comment'),
+(63, NULL, '2021-04-08 05:52:44', 'test'),
+(64, NULL, '2021-04-09 08:06:06', 'ss'),
+(65, NULL, '2021-04-09 08:06:11', 'qzdqdaefef'),
+(66, NULL, '2021-04-09 08:06:33', 'dflkdqkklds'),
+(67, NULL, '2021-04-09 08:08:15', 'eeafe'),
+(68, NULL, '2021-04-09 08:08:22', 'dsqlksqcklkqs');
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `user`
+-- Structure de la table `users`
 --
 
-CREATE TABLE `user` (
+CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `firstname` varchar(15) NOT NULL,
-  `lastname` varchar(100) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` text NOT NULL,
-  `role` enum('guest','admin','user','') NOT NULL
+  `username` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `confirmation_token` varchar(60) DEFAULT NULL,
+  `confirmed_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Gegevens worden geëxporteerd voor tabel `user`
+-- Déchargement des données de la table `users`
 --
 
-INSERT INTO `user` (`id`, `firstname`, `lastname`, `username`, `email`, `password`, `role`) VALUES
-(7, 'Layeux', 'Gael', 'lordofchicken', 'gael.layeux@poulet.org', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'guest'),
-(16, 'Rob', 'Klockaerts', 'rob', 'rob.klockaerts@hotmail.com', 'dc724af18fbdd4e59189f5fe768a5f8311527050', 'admin'),
-(18, 'john', 'doe', 'john', 'john.doe@mail.com', 'dc724af18fbdd4e59189f5fe768a5f8311527050', 'guest'),
-(20, 'jane', 'doe', 'jane', 'jane.doe@mail.com', 'dc724af18fbdd4e59189f5fe768a5f8311527050', 'guest');
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `confirmation_token`, `confirmed_at`) VALUES
+(33, 'lordofchicken', 'gael.layeux@poulet.org', '$2y$10$QJq6//fZZeUhrcedi8FSB.RPfrprMXYdFX4AAauCK7AWBdgwFwhea', NULL, NULL),
+(34, 'gael', 'gael.layeux@gmail.com', '$2y$10$tyhyBwdXMqJ3DwZPebNwieDnA7IURCkV6FPsKkzqKm2vhGBIwB6re', NULL, NULL);
 
 --
--- Indexen voor geëxporteerde tabellen
+-- Index pour les tables déchargées
 --
 
 --
--- Indexen voor tabel `comments`
+-- Index pour la table `comments`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexen voor tabel `user`
+-- Index pour la table `users`
 --
-ALTER TABLE `user`
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT voor geëxporteerde tabellen
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT voor een tabel `comments`
+-- AUTO_INCREMENT pour la table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
--- AUTO_INCREMENT voor een tabel `user`
+-- AUTO_INCREMENT pour la table `users`
 --
-... (8 lines left)
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
