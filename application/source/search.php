@@ -6,15 +6,7 @@
 
     <link rel="stylesheet" href="search.css">
 
-<header class="container">
-    <div class="d-flex justify-content-end">
-        <div id="myform" class="searchbar">
-            <label class="search_label" for="search_input">Search :</label>
-            <input id="search_input" class="search_input" type="text" name="search" onkeypress="clickPress(event)">
-            <button id="btn_search" aria-label="search" class="search_icon"><i class="fas fa-search"></i></button>
-        </div>
-    </div>
-</header>
+
 <main class="container">
     <div class="">
         <div id="switch" class="">
