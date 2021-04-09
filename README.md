@@ -39,11 +39,6 @@ Please find here below the UX prototype of our website at the first stage of its
 
 ![UX-Prototype](pictures_README/img.png)
 
-Please find here below first scratches 
-
-
-![Scratch](./pictures_README/scratch1)
-![Scratch](./pictures_README/scratch2) 
 
 
 # How
