@@ -20,6 +20,8 @@ services:
   database:
     image: mariadb:10.4.2
     container_name: becode-database
+    ports:
+        - 3306:3306
     restart: always
     volumes:
       - ./database:/docker-entrypoint-initdb.d/

@@ -56,7 +56,7 @@ if (!empty($_SESSION['user'])) {
               integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
               crossorigin="anonymous">
 
-        <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="./style.css"/>
         <script src="https://kit.fontawesome.com/770384ac45.js" crossorigin="anonymous"></script>
         <title>The theater</title>
     </head>
