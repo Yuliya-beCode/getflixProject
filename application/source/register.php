@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="style.css">
+
 <?php require_once('function.php'); ?>
 <?php session_start(); ?>
 <?php
@@ -46,7 +48,6 @@ if (!empty($_POST)) {
         $user_id = $pdo->lastInsertId();
         mail($POST['email'], 'Confimation Token', "For validation click on this link\n\nhttp://localhost/confirm.php?id=$user_id&token=$token");
         $_SESSION['flash']['success'] = 'A confirmation email has been sent to you';
-        header('Location: login.php');
         exit();
     }
 }
@@ -56,69 +57,73 @@ if (!empty($_POST)) {
 
 
 
-
-
-<?php require 'header.php'; ?>
-
-<div class="container-fluid">
-    <section class="section pb-5">
-
-
-        <h2 class="section-heading h1 pt-4 text-white text-center">Registration</h2>
+<?php include 'header.php'; ?>
 
 
 
+<div class="col-sm-8">
 
-        <?php if (!empty($errors)) : ?>
-            <div class="alert alert-danger">
-                <p>You have not completed the form correctly</p>
-                <ul>
-                    <?php foreach ($errors as $error) : ?>
-                        <li><?= $error; ?></li>
-                    <?php endforeach; ?>
-                </ul>
+    <div class="card">
+        <form method="POST" action="" class="card-body">
+            <div class="form-header">
+                <h3><i class="fas fa-envelope-square"></i> Please Fill in All the Blanks</h3>
+            </div>
+
+
+
+            <div class="md-form">
+                <i class="fas fa-user prefix grey-text"></i>
+
+                <label for="form-nickname">Username</label>
+
+                <input type="text" id="username" class="form-control" name="username" value="" />
 
             </div>
-        <?php endif; ?>
+
+            <div class="md-form">
+                <i class="fas fa-envelope prefix grey-text"></i>
+
+                <label for="form-email">Your email</label>
+
+                <input type="text" class="form-control" id="email" name="email" value="" />
 
 
-        <div class="row d-flex justify-content-center">
+            </div>
 
 
-            <div class="col-8 ">
+            <div class="md-form">
+                <i class="fas fa-key"></i>
+                <label for="form-password">Password</label>
+                <input type="text" class="form-control" id="password" name="password" />
+
+            </div>
 
 
 
-                <h3>Please Fill in All the Blanks</h3>
+
+            <input type="hidden" name="forminscription" value="any" />
+
+            <div class="md-form">
+                <i class="fas fa-key"></i>
+                <label for="for-confirm" style="width: max-content">Confirm Password</label>
+                <input type="text" class="form-control" id="password_confirm" name="password_confirm" />
 
 
 
-                <form action="" method="POST">
 
-                    <div class="form-group">
-                        <label for="">Username</label>>
-                        <input type="text" name="username" class="form-control" />
+            </div>
+            <div class="text-center mt-4">
+                <button class="btn btn-light-blue" name="forminscription">Submit</button>
+                <i class="fas fa-paper-plane"></i>
+            </div>
 
-                        <div class="form-group">
-                            <label for="">Email</label>>
-                            <input type="mail" name="email" class="form-control" />
 
-                            <div class="form-group">
-                                <label for="">Password</label>
-                                <input type="password" name="password" class="form-control" />
+        </form>
 
-                                <div class="form-group">
-                                    <label for="">Confirm password</label>>
-                                    <input type="password" name="password_confirm" class="form-control" />
+    </div>
 
-                                    <button type="submit" class="btn-primary">Inscription</button>
-
-                </form>
-
-    </section>
 
 </div>
 
 
-
-<?php require 'footer.php'; ?>
+<?php include 'footer.php'; ?>

@@ -14,9 +14,10 @@ if (!empty($_POST)) {
     }
 }
 
-require('header.php');
+include('header.php');
 ?>
 
+<link rel="stylesheet" href="style.css">
 
 <h1>Bonjour <?= $_SESSION['auth']->username; ?></h1>
 
@@ -34,4 +35,4 @@ require('header.php');
 
 </form>
 
-<?php require('footer.php'); ?>
+<?php include('footer.php'); ?>

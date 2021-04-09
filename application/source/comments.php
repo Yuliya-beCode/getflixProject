@@ -6,7 +6,7 @@ logged_only();
 ?>
 
 <?php
-require('header.php');
+include('header.php');
 ?>
 
 
@@ -59,5 +59,5 @@ echo"</tr>";
 </table>
 <?php
 
-require('footer.php');
+include('footer.php');
 ?>

@@ -1,34 +1,12 @@
+<?php include('header.php');?>
+
+ 
 
 
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="style2.css" type="text/css" />
-    </head>
-
-    <body>
-        <header>
-            <nav class="navbar">
-                <div class="logo">
-                    <img src="logo.png" width="110" height="110" id="theater" />
-                </div>
-                <a button href="">Accounts</a>
-                <a href="">Comments</a>
-
-            </nav>
-        </header>
-
-
-
-        <h1>Welcome to the <?php echo $_SESSION['user']['username']; ?> Page</h1>
+        <h1>Welcome to the <?php echo $_SESSION['users']['username']; ?> Page</h1>
 
         <div id="profile">
-            <h2>Your Username is: <?php echo  "<u>" . $_SESSION['user']['username'] . "</u>"; ?> and Your Role is :<?php echo "<u>" . $_SESSION['user']['role'] . "</u>"; ?></h2>
+            <h2>Your Username is: <?php echo  "<u>" . $_SESSION['users']['username'] . "</u>"; ?>  . "</u>"; ?></h2>
             <div id="logout"><a href="logout.php">Please Click To Logout</a></div>
         </div>
 
@@ -78,4 +56,5 @@
 
             ?>
         </table>
-        <footer>
+
+        <?php include('footer.php'); ?>
