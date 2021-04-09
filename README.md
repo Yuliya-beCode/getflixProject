@@ -8,19 +8,21 @@
 
 Our Project Team consists of
 
-* Backend Developer - @Lord-of-Chicken
-* Backend Developer - @gonzalovsilva
-* Frontend Developer - @robbertklockaerts
-* Project Manager - @Yuliya-beCode
+* Backend Developer - [@Lord-of-Chicken](https://github.com/Lord-of-Chicken)
+* Backend Developer -[@gonzalovsilva](https://github.com/gonzalovsilva)
+* Frontend Developer - [@robbertklockaerts](https://github.com/robbertklockaerts)
+* Project Manager - [@Yuliya-beCode](https://github.com/Yuliya-beCode)
 
 Tasks allocation
 
 | Gonçalo Silva| Gael Layeux | Robbert Klockaerts |  Yuliya Bochkovskaya|
-|-----------|:-----------:|-----------:| -----------:|   
-| Tasks | Tasks | Tasks | Tasks |  
+|:-----------:|:-----------:|:-----------:| :-----------:|   
+| right to comment on the content  | a session system: registration, connection / disconnection. | right to comment on the content | General administration of the project/Figma style |  
+| Include a search bar and sort by filters| php footer/header include | admin dashboard | php insert video into iframe |
+| page or section that displays the top movies with the movie db API| Back office for user and comment management (CRUD) | login form css |  footer/header templates|
+| General administration of the project drafting search flow chart| General administration of the project | General administration of the project|  register form css|
 
-
-If you have any questions in regards to our project, please do not hesitate to contact us directly on GitHub
+If you have any questions in regards to our project, please do not hesitate to contact us directly on GitHub. Our contact details are mentioned above. 
 
 # What
 
@@ -31,11 +33,17 @@ movies.
 
 * We well spotted  the similarities between these platforms (navbar, header, search tool, different categories of videos…) 
 
-Please find here below the UX prototype of our website 
+Please find here below the UX prototype of our website at the first stage of its creation
 
 [UX-Prototype of our website ](https://www.figma.com/proto/LZLTLgveLvyu8aBJbc3u1G/The-Theater?node-id=66%3A0&scaling=scale-down&page-id=0%3A1)
 
 ![UX-Prototype](pictures_README/img.png)
+
+Please find here below first scratches 
+
+
+![Scratch](./pictures_README/scratch1)
+![Scratch](./pictures_README/scratch2) 
 
 
 # How
@@ -54,7 +62,6 @@ Please find here below the UX prototype of our website
 # Why
 
 # When
-
 
 # Evaluation criterias -> self check
 
