@@ -10,26 +10,29 @@
         $_SESSION['auth'] = $user;
         $_SESSION['flash']['success'] = "Your are connected !";
 
-} }
+    }
+}
 ?>
 
 
 <?php include('header.php'); ?>
-<h1>Login</h1>
+    <h1>Login</h1>
 
-<form action="" method="POST">
+    <div class="d-flex justify-content-center align-content-center">
+        <form action="" method="POST" class="bg-white rounded-2 p-5">
 
-    <div class="form-group">
-        <label for="">Username or E-mail</label>>
-        <input type="text" name="username" class="form-control" />
-
-        <div class="form-group">
-            <label for="">Password</label>
-            <input type="password" name="password" class="form-control" />
-          
             <div class="form-group">
-   
-            <button type="submit" class="btn-primary">connection</button>
+                <label for="">Username or E-mail</label>
+                <input type="text" name="username" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label for="">Password</label>
+                <input type="password" name="password" class="form-control"/>
+            </div>
+            <div class="form-group">
 
-</form>
+                <button type="submit" class="btn btn-primary d-block mx-auto w-100 mt-4">connection</button>
+            </div>
+        </form>
+    </div>
 <?php include('footer.php'); ?>

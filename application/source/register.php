@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="style.css">
-
 <?php require_once('function.php'); ?>
 <?php
 
@@ -7,7 +5,6 @@ if (!empty($_POST)) {
 
     $errors = array();
     require_once('db.php');
-
 
 
     if (empty($_POST['username']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['username'])) {
@@ -51,74 +48,67 @@ if (!empty($_POST)) {
 ?>
 
 
-
 <?php include 'header.php'; ?>
 
 
+    <div class="d-flex justify-content-center align-content-center">
 
-<div class="col-sm-8">
-
-    <div class="card">
-        <form method="POST" action="" class="card-body">
-            <div class="form-header">
-                <h3><i class="fas fa-envelope-square"></i> Please Fill in All the Blanks</h3>
-            </div>
-
+        <div class="bg-white rounded-2">
+            <form method="POST" action="" class="card-body">
+                <div class="form-header">
+                    <h3><i class="fas fa-envelope-square"></i> Please Fill in All the Blanks</h3>
+                </div>
 
 
-            <div class="md-form">
-                <i class="fas fa-user prefix grey-text"></i>
+                <div class="md-form">
+                    <i class="fas fa-user prefix grey-text"></i>
 
-                <label for="form-nickname">Username</label>
+                    <label for="form-nickname">Username</label>
 
-                <input type="text" id="username" class="form-control" name="username" value="" />
+                    <input type="text" id="username" class="form-control" name="username" value=""/>
 
-            </div>
+                </div>
 
-            <div class="md-form">
-                <i class="fas fa-envelope prefix grey-text"></i>
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix grey-text"></i>
 
-                <label for="form-email">Your email</label>
+                    <label for="form-email">Your email</label>
 
-                <input type="text" class="form-control" id="email" name="email" value="" />
-
-
-            </div>
+                    <input type="text" class="form-control" id="email" name="email" value=""/>
 
 
-            <div class="md-form">
-                <i class="fas fa-key"></i>
-                <label for="form-password">Password</label>
-                <input type="text" class="form-control" id="password" name="password" />
-
-            </div>
+                </div>
 
 
+                <div class="md-form">
+                    <i class="fas fa-key"></i>
+                    <label for="form-password">Password</label>
+                    <input type="text" class="form-control" id="password" name="password"/>
+
+                </div>
 
 
-            <input type="hidden" name="forminscription" value="any" />
+                <input type="hidden" name="forminscription" value="any"/>
 
-            <div class="md-form">
-                <i class="fas fa-key"></i>
-                <label for="for-confirm" style="width: max-content">Confirm Password</label>
-                <input type="text" class="form-control" id="password_confirm" name="password_confirm" />
-
-
+                <div class="md-form">
+                    <i class="fas fa-key"></i>
+                    <label for="for-confirm" style="width: max-content">Confirm Password</label>
+                    <input type="text" class="form-control" id="password_confirm" name="password_confirm"/>
 
 
-            </div>
-            <div class="text-center mt-4">
-                <button class="btn btn-light-blue" name="forminscription">Submit</button>
-                <i class="fas fa-paper-plane"></i>
-            </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button class="btn btn-light-blue" name="forminscription">Submit</button>
+                    <i class="fas fa-paper-plane"></i>
+                </div>
 
 
-        </form>
+            </form>
+
+        </div>
+
 
     </div>
-
-
-</div>
 
 
 <?php include 'footer.php'; ?>
