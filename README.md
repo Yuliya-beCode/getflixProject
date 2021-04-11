@@ -36,6 +36,7 @@ The Theatre is a streaming website created in html / css, javascript and php.
 
 Please find here below our very first sketches and UX prototype of our website which has been created at the planning stage the
 Theatre :-)
+
 ![Sketch one](pictures_README/img_1.png)
 
 ![Sketch two](pictures_README/img_2.png)
