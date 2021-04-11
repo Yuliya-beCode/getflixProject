@@ -18,21 +18,34 @@
 <?php include('header.php'); ?>
     <h1>Login</h1>
 
-    <div class="d-flex justify-content-center align-content-center">
-        <form action="" method="POST" class="bg-white rounded-2 p-5">
+    <div class="d-flex justify-content-center align-content-center pb-0 mb-0">
 
-            <div class="form-group">
+        <div class="bg-white rounded-2">
+        <form action="" method="POST" class="card-body">
+
+            <div class="form-header">
+                <h3><i class="fas fa-envelope-square"></i> Please Fill in All the Blanks</h3>
+            </div>
+
+            <div class="md-form">
+                <i class="fas fa-user prefix grey-text"></i>
                 <label for="">Username or E-mail</label>
                 <input type="text" name="username" class="form-control"/>
             </div>
-            <div class="form-group">
+            <div class="md-form">
+                <i class="fas fa-key"></i>
                 <label for="">Password</label>
                 <input type="password" name="password" class="form-control"/>
             </div>
-            <div class="form-group">
 
-                <button type="submit" class="btn btn-primary d-block mx-auto w-100 mt-4">connection</button>
+            <div class="text-center mt-4">
+                <i class="fas fa-paper-plane"></i>
+                <span class="border rounded-3 p-2">
+                <button type="submit" class="btn btn-light-blue">connection</button>
+                </span>
             </div>
         </form>
+            </div>
+
     </div>
 <?php include('footer.php'); ?>

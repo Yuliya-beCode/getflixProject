@@ -50,10 +50,10 @@ if (!empty($_POST)) {
 
 <?php include 'header.php'; ?>
 
+    <h1>Register</h1>
+    <div class=" col-sm d-flex justify-content-center align-content-center pt-2">
 
-    <div class="d-flex justify-content-center align-content-center">
-
-        <div class="bg-white rounded-2">
+        <div class="row bg-white rounded-2">
             <form method="POST" action="" class="card-body">
                 <div class="form-header">
                     <h3><i class="fas fa-envelope-square"></i> Please Fill in All the Blanks</h3>
@@ -98,8 +98,10 @@ if (!empty($_POST)) {
 
                 </div>
                 <div class="text-center mt-4">
+                       <span class="border rounded-3 p-2">
                     <button class="btn btn-light-blue" name="forminscription">Submit</button>
                     <i class="fas fa-paper-plane"></i>
+                       </span>
                 </div>
 
 

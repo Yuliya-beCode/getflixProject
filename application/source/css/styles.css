@@ -1,5 +1,6 @@
+/*noinspection ALL*/
 html, body {
-    background: url(https://images.unsplash.com/photo-1503095396549-807759245b35?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80) no-repeat center center fixed;
+    background: url(https://images.unsplash.com/photo-1503095396549-807759245b35?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80) no-repeat fixed center;
     background-size: cover;
     position: relative;
     width: 100%;
@@ -31,11 +32,15 @@ ul, p {
     margin: 0
 }
 
+
 #searchbar {
+    border-radius: 30px;
     margin: 0 auto;
     width: 80vw;
-    opacity: .8
+    opacity: .8;
+
 }
+
 
 .searchbar button {
     background: 0;
@@ -50,6 +55,7 @@ ul, p {
     border-radius: 30px;
     padding: 5px
 }
+
 
 .search_label {
     color: #fff;
@@ -133,7 +139,8 @@ ul, p {
     -moz-transition: 600ms filter linear, transform 300ms;
     -ms-transition: 600ms -ms-filter linear, transform 300ms;
     -o-transition: 600ms -o-filter linear, transform 300ms;
-    transition: 600ms filter linear, 300ms -webkit-filter linear, transform 300ms
+    transition: 600ms filter linear, 300ms -webkit-filter linear, transform 300ms;
+
 }
 
 .card:hover {
@@ -148,7 +155,8 @@ ul, p {
 
 .card {
     min-height: 100%;
-    max-height: 100%
+    max-height: 100%;
+
 }
 
 #filters ul {
@@ -225,14 +233,14 @@ ul, p {
 h1 {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    color: wheat;
+    color: white;
     position: relative;
 }
 
 h2 {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    color: wheat
+    color: white;
 }
 
 #films {
@@ -301,9 +309,9 @@ ul, p {
 }
 
 .searchbar {
+    border-radius: 30px;
     height: 50px;
     background-color: #353b48;
-    border-radius: 30px;
     padding: 5px
 }
 
@@ -322,6 +330,7 @@ ul, p {
     caret-color: transparent;
     line-height: 40px;
     transition: width .4s linear
+
 }
 
 .searchbar:hover > .search_input {
@@ -463,11 +472,13 @@ table, th {
 }
 
 footer {
+    position: fixed;
+    left: 0;
     bottom: 0;
-    position: absolute;
     width: 100%;
-    padding-bottom: 25px
+
 }
+
 
 #theater {
     border-radius: 3px

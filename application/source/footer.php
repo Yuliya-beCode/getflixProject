@@ -14,10 +14,10 @@
 
 <footer class="bg-dark text-around text-white">
     <!-- Grid container -->
-    <div class="container-fluid p-4 pb-0">
+    <div class="container-fluid pb-0">
         <!-- Section: Social media -->
 
-        <div class="row justify-content-center align-items-center text-center">
+        <div class="col-sm justify-content-center align-items-center text-center">
             <a href="https://github.com/Lord-of-Chicken" class="col-sm-12 col-lg-3 my-2 text-white">
                 <i class="fab fa-github"></i>Lord-of-Chicken</a>
             <a href="https://github.com/gonzalovsilva" class="col-sm-12 col-lg-3 my-2 text-white">
@@ -28,17 +28,17 @@
                 <i class="fab fa-github"></i>Yuliya-beCode</a></div>
 
 
-        <div class="d-flex flex-column align-items-center justify-content-center mt-3">
+        <div class="col-sm d-flex flex-column align-items-center justify-content-center mt-3">
             <img class="navbar-brand"
                  src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_1-5bdc75aaebeb75dc7ae79426ddd9be3b2be1e342510f8202baf6bffa71d7f5c4.svg"
                  alt="">
-            <p class="text-muted">This product uses the TMDb API but is not endorsed or certified by
+            <p class="text-muted text-center">This product uses the TMDb API but is not endorsed or certified by
                 TMDb
             </p>
         </div>
 
         <!-- Copyright -->
-        <div class="pt-2 d-flex justify-content-center">
+        <div class="col-sm pt-2 d-flex justify-content-center">
             <a href="https://github.com/Yuliya-beCode/getflixProject"><i class="fab fa-github"></i></a>
             <a class="text-white ms-3 d-block" href="https://mdbootstrap.com/">The Theater copyright© 2021</a>
         </div>
