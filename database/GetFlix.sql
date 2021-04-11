@@ -1,11 +1,9 @@
-CREATE DATABASE IF NOT EXISTS GetFlix;
-USE GetFlix;
 -- phpMyAdmin SQL Dump
 -- version 4.8.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : database:3306
--- Généré le :  ven. 09 avr. 2021 à 13:00
+-- Généré le :  Dim 11 avr. 2021 à 20:26
 -- Version du serveur :  10.4.2-MariaDB-1:10.4.2+maria~bionic
 -- Version de PHP :  7.2.5
 
@@ -31,47 +29,24 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `comments` (
-  `id` int(11) NOT NULL,
-  `uid` varchar(128) CHARACTER SET latin1 DEFAULT NULL,
-  `date` datetime DEFAULT current_timestamp(),
-  `message` text CHARACTER SET latin1 NOT NULL
+  `commentID` int(50) NOT NULL,
+  `comment` text NOT NULL,
+  `parent_id` int(50) DEFAULT NULL,
+  `moovieid` int(10) DEFAULT NULL,
+  `userid` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `comments`
 --
 
-INSERT INTO `comments` (`id`, `uid`, `date`, `message`) VALUES
-(16, 'anon', '2021-04-07 00:00:00', 'edited comment'),
-(63, NULL, '2021-04-08 05:52:44', 'test'),
-(64, NULL, '2021-04-09 08:06:06', 'ss'),
-(65, NULL, '2021-04-09 08:06:11', 'qzdqdaefef'),
-(66, NULL, '2021-04-09 08:06:33', 'dflkdqkklds'),
-(67, NULL, '2021-04-09 08:08:15', 'eeafe'),
-(68, NULL, '2021-04-09 08:08:22', 'dsqlksqcklkqs');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `users`
---
-
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `confirmation_token` varchar(60) DEFAULT NULL,
-  `confirmed_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `users`
---
-
-INSERT INTO `users` (`id`, `username`, `email`, `password`, `confirmation_token`, `confirmed_at`) VALUES
-(33, 'lordofchicken', 'gael.layeux@poulet.org', '$2y$10$QJq6//fZZeUhrcedi8FSB.RPfrprMXYdFX4AAauCK7AWBdgwFwhea', NULL, NULL),
-(34, 'gael', 'gael.layeux@gmail.com', '$2y$10$tyhyBwdXMqJ3DwZPebNwieDnA7IURCkV6FPsKkzqKm2vhGBIwB6re', NULL, NULL);
+INSERT INTO `comments` (`commentID`, `comment`, `parent_id`, `moovieid`, `userid`) VALUES
+(10, 'jkdfskjjkdsjkf', NULL, NULL, '33'),
+(11, 'bloups', NULL, NULL, '33'),
+(12, 'dmllmdfslms', NULL, NULL, '33'),
+(13, 'qeDFSFDVD', NULL, NULL, '33'),
+(14, 'QDGSFD', NULL, 399566, '33'),
+(15, 'blip', NULL, NULL, '33');
 
 --
 -- Index pour les tables déchargées
@@ -81,13 +56,7 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `confirmation_token`
 -- Index pour la table `comments`
 --
 ALTER TABLE `comments`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`commentID`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -97,13 +66,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
-
---
--- AUTO_INCREMENT pour la table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `commentID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
