@@ -27,20 +27,20 @@
                 <h3><i class="fas fa-envelope-square"></i> Please Fill in All the Blanks</h3>
             </div>
 
-            <div class="md-form">
+            <div class="md-form form-control-sm">
                 <i class="fas fa-user prefix grey-text"></i>
                 <label for="">Username or E-mail</label>
                 <input type="text" name="username" class="form-control"/>
             </div>
-            <div class="md-form">
+            <div class="md-form form-control-sm">
                 <i class="fas fa-key"></i>
                 <label for="">Password</label>
                 <input type="password" name="password" class="form-control"/>
             </div>
 
-            <div class="text-center mt-4">
+            <div class="text-center mt-4 form-control-sm">
                 <i class="fas fa-paper-plane"></i>
-                <span class="border rounded-3 p-2">
+                <span class="border rounded p-3">
                 <button type="submit" class="btn btn-light-blue">connection</button>
                 </span>
             </div>

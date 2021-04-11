@@ -51,16 +51,16 @@ if (!empty($_POST)) {
 <?php include 'header.php'; ?>
 
     <h1>Register</h1>
-    <div class=" col-sm d-flex justify-content-center align-content-center pt-2">
+    <div class="col-sm d-flex justify-content-center align-content-center pt-2">
 
         <div class="row bg-white rounded-2">
             <form method="POST" action="" class="card-body">
-                <div class="form-header">
+                <div class="form-header form-control-sm">
                     <h3><i class="fas fa-envelope-square"></i> Please Fill in All the Blanks</h3>
                 </div>
 
 
-                <div class="md-form">
+                <div class="md-form form-control-sm">
                     <i class="fas fa-user prefix grey-text"></i>
 
                     <label for="form-nickname">Username</label>
@@ -69,7 +69,7 @@ if (!empty($_POST)) {
 
                 </div>
 
-                <div class="md-form">
+                <div class="md-form form-control-sm">
                     <i class="fas fa-envelope prefix grey-text"></i>
 
                     <label for="form-email">Your email</label>
@@ -80,7 +80,7 @@ if (!empty($_POST)) {
                 </div>
 
 
-                <div class="md-form">
+                <div class="md-form form-control-sm">
                     <i class="fas fa-key"></i>
                     <label for="form-password">Password</label>
                     <input type="text" class="form-control" id="password" name="password"/>
@@ -90,7 +90,7 @@ if (!empty($_POST)) {
 
                 <input type="hidden" name="forminscription" value="any"/>
 
-                <div class="md-form">
+                <div class="md-form form-control-sm">
                     <i class="fas fa-key"></i>
                     <label for="for-confirm" style="width: max-content">Confirm Password</label>
                     <input type="text" class="form-control" id="password_confirm" name="password_confirm"/>
