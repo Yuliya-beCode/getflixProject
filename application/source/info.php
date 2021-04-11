@@ -39,12 +39,7 @@ if (!$response_info->title) {
 } else { ?>
 <?php include('header.php'); ?>
 
-        <link rel="stylesheet" href="info.css" />
-
-
-
-
-        <div class="container-md">
+    <div class="container-md">
             <div class="row g-3">
                 <div class="col-lg-6">
                     <div class="bg-white rounded-2">
@@ -163,4 +158,4 @@ if (!$response_info->title) {
 
 <?php
 } ?>
-<?php include('footer.php'); ?>
+<?php require('footer.php'); ?>

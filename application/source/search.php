@@ -4,10 +4,7 @@
 
 <?php include('header.php'); ?>
 
-    <link rel="stylesheet" href="search.css">
-
-
-<main class="container">
+    <main class="container" style="padding-bottom: 300px;">
     <div class="">
         <div id="switch" class="">
             <div id="filters" class="">

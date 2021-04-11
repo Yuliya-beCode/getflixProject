@@ -22,8 +22,6 @@ if (!empty($_POST)) {
 include('header.php');
 ?>
 
-<link rel="stylesheet" href="style.css">
-
 <h1>Bonjour <?= $_SESSION['auth']->username; ?></h1>
 
 <form action="" method="POST">
