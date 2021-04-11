@@ -42,8 +42,6 @@ if (!empty($_POST)) {
         $req = $pdo->prepare("INSERT INTO users SET username = ?, password = ?, email = ?");
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
         $req->execute([$_POST['username'], $password, $_POST['email']]);
-
-
     }
 }
 

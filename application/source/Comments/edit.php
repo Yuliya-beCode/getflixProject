@@ -7,7 +7,7 @@ if($_POST){
     
 ){
         // On inclut la connexion à la base
-        require_once('config.php');
+        require_once('../db.php');
 
         // On nettoie les données envoyées
         $id = strip_tags($_POST['id']);
@@ -16,7 +16,7 @@ if($_POST){
 
         $sql = 'UPDATE `comments` SET `comment`=:comment, `parent_id`=:parent_id WHERE `id`=:id;';
 
-        $query = $dbh->prepare($sql);
+        $query = $pdo->prepare($sql);
 
         $query->bindValue(':id', $id, PDO::PARAM_INT);
         $query->bindValue(':comment', $messages, PDO::PARAM_STR);
@@ -43,7 +43,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
     $sql = 'SELECT * FROM `comments` WHERE `id` = :id;';
 
     // On prépare la requête
-    $query = $dbh->prepare($sql);
+    $query = $pdo->prepare($sql);
 
     // On "accroche" les paramètre (id)
     $query->bindValue(':id', $id, PDO::PARAM_INT);

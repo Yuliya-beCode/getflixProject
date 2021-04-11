@@ -1,14 +1,9 @@
 <?php
-// On démarre une session
+
 session_start();
-
-// On inclut la connexion à la base
-require_once('config.php');
-
-$sql = 'SELECT * FROM `comments`';
-
+$sql = 'SELECT * FROM `users`, `comments`';
 // On prépare la requête
-$query = $dbh->prepare($sql);
+$query = $pdo->prepare($sql);
 
 // On exécute la requête
 $query->execute();
@@ -16,65 +11,149 @@ $query->execute();
 // On stocke le résultat dans un tableau associatif
 $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
-require_once('close.php');
-?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des commentaires</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
-<body>
-    <main class="container">
-        <div class="row">
-            <section class="col-12">
-            <?php
-                    if(!empty($_SESSION['erreur'])){
+// Recuperation id user
+$userid = $_SESSION['auth']->id;
+$moovieidsql = $_POST['moovieid']
+
+?>
+
+
+<?php
+
+// Add commment
+if ($_POST) {
+    if (
+        isset($_POST['comment']) && !empty($_POST['comment'])
+    ) {
+
+        $comment = $_POST['comment'];
+        $userid = $_SESSION['auth']->id;
+        // Recuperation id film
+        $moovieid = $_GET['movie'];
+        $req = $pdo->prepare('INSERT INTO comments(comment, userid, moovieid) VALUES (?, ?, ?)');
+
+
+        $req->execute(array($comment, $userid, $moovieid));
+
+
+        $_SESSION['comments'] = "comment additionned";
+
+        header('Location: comments/index.php');
+    } else {
+        $_SESSION['erreur'] = "comment empy";
+    }
+}
+
+
+
+?>
+</thead>
+
+<section>
+    <section>
+        <main class="container">
+            <div class="row">
+                <section class="col-12">
+                    <?php
+                    if (!empty($_SESSION['erreur'])) {
                         echo '<div class="alert alert-danger" role="alert">
-                                '. $_SESSION['erreur'].'
+                                ' . $_SESSION['erreur'] . '
                             </div>';
                         $_SESSION['erreur'] = "";
                     }
-                ?>
-                <?php
-                    if(!empty($_SESSION['message'])){
+                    ?>
+                    <?php
+                    if (!empty($_SESSION['message'])) {
                         echo '<div class="alert alert-success" role="alert">
-                                '. $_SESSION['message'].'
+                                ' . $_SESSION['message'] . '
                             </div>';
                         $_SESSION['message'] = "";
                     }
-                ?>
-                <h1>Liste des comentaires</h1>
-                <table class="table">
-                    <thead>
-                        <th>ID</th>
-                        <th>Commentaire</th>
-                        <th>Parrent_id</th>
-                
-                    </thead>
-                    <tbody>
-                        <?php
-                        // On boucle sur la variable result
-                        foreach($result as $message){
-                        ?>
-                            <tr>
-                                <td><?= $message['id'] ?></td>
-                                <td><?= $message['comment'] ?></td>
-                                <td><?= $message['parent_id'] ?></td>
+                    ?>
+                    <table class="table">
+                        <thead>
+                            <th>Username</th>
+                            <th>Commentaire</th>
+                            <th>Moovie ID</th>
+
+
+
+
+                        <tbody>
+                            <?php
+                            // On boucle sur la variable result
+
+                            foreach ($result as $realid){
+                                $userid2 = $realid['userid'];
+                                $userid3 = $realid['id'];
+
+                                echo $userid2;
+echo('aaa');
+echo $userid3;
+                                if ($userid3 == $userid2) {
+                                
+                            foreach ($result as $message) {
+                                $moovieid = $_GET['movie'];
+                               
+
+
+                                if ($moovieid == $message['moovieid']) {
+
+                            ?>
+
+                                <tr>
+                                    <td><?= $message['username'] ?></td>
+                                    <td><?= $message['comment'] ?></td>
+                                    <td><?= $message['moovieid'] ?></td>
+
+                                    <td> <a href="comments/edit.php?id=<?= $message['id'] ?>">Modifie</a> <a href="comments/delete.php?id=<?= $message['id'] ?>">Delete</a></td>
+                                </tr>
+                            <?php
+                            }
+                            ?>
+                                 <?php
+                            }
+                            ?>
+                                           <?php
+                            }
+                            ?>
+                                             <?php
+                            }
+                            ?>
+                            
                    
-                                <td><a href="details.php?id=<?= $message['id'] ?>">Voir</a> <a href="edit.php?id=<?= $message['id'] ?>">Modifier</a> <a href="delete.php?id=<?= $message['id'] ?>">Supprimer</a></td>
-                            </tr>
-                        <?php
-                        }
-                        ?>
-                    </tbody>
-                </table>
-                <a href="add.php" class="btn btn-primary">Ajouter un commentaire</a>
-            </section>
-        </div>
-    </main>
-</body>
-</html>
+                        </tbody>
+
+
+                    </table>
+
+                    <main class="container">
+                        <div class="row">
+                            <section class="col-12">
+                                <?php
+                                if (!empty($_SESSION['erreur'])) {
+                                    echo '<div class="alert alert-danger" role="alert">
+                                ' . $_SESSION['erreur'] . '
+                            </div>';
+                                    $_SESSION['erreur'] = "";
+                                }
+                                ?>
+                                <h1>Add commeent</h1>
+                                <form method="post">
+
+                                    <div class="form-group">
+                                        <label for="comment">comment</label>
+                                        <input type="text" id="comment" name="comment" class="form-control">
+
+                                    </div>
+
+
+                                    <button class="btn btn-primary">Poster</button>
+                                </form>
+                            </section>
+                        </div>
+                    </main>
+                </section>
+            </div>
+        </main>

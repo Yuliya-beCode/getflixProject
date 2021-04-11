@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once('db.php');
+
 ?>
 <?php
 if (!isset($_GET['movie']) or $_GET['movie'] == '') {
@@ -40,6 +40,8 @@ if (!$response_info->title) {
     <?php include('header.php'); ?>
 
     <link rel="stylesheet" href="info.css" />
+
+
 
 
     <div class="container-md">
@@ -88,18 +90,73 @@ if (!$response_info->title) {
                         </p>
                     </div>
                     <!-- Comment section -->
+                    <div class="p-3 bg-light bg-gradient border-bottom">
+                        <h5>Comment section</h5>
+                    </div>
+                    <div class="row m-t-md">
+                        <div class="col">
+                            <?php require_once 'process.php'; ?>
+                            <?php
+                            $mysqli = new mysqli('database', 'root', 'root', 'GetFlix') or die(mysqli_error($mysqli));
+                            $result = $mysqli->query("SELECT * FROM comments") or die($mysqli->error);
+                            ?>
+                            <div>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>date</th>
+                                            <th>message</th>
+                                            <th>action</th>
+                                        </tr>
+                                    </thead>
+                                    <?php
+                                    while ($row = $result->fetch_assoc()) : ?>
+                                        <tr>
+                                            <td><?php echo $row['date']; ?></td>
+                                            <td><?php echo $row['message']; ?></td>
+                                            <td>
+                                                <a href="info.php?edit=<?php echo $row['id']; ?>" class="btn btn-info">Edit</a>
+                                                <a href="info.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger">Delete </a>
+                                            </td>
+                                        </tr>
+                                    <?php endwhile; ?>
+                                </table>
+                            </div>
+                            <?php
+                            function pre_r($array)
+                            {
+                                echo '<pre>';
+                                print_r($array);
+                                echo '</pre>';
+                            }
+                            ?>
+                            <form action="process.php" method="POST">
+                                <input type='hidden' name='id' value="<?php echo $id; ?>">
+                                <div class="form-group">
+                                    <input type="text" name="message" class="form-control" value="<?php echo $message; ?>" placeholder="enter your comment">
+                                    <input type='hidden' name='date' class="form-control" value=".date('Y-m-d H:i:s')."'>
+                                </div>
+                                <div class="form-group">
+                                    <?php
+                                    if ($update == true) :
+                                    ?>
+                                    <button type=' submit' class="btn btn-info" name='update'>Update</button>
+                                <?php else : ?>
+                                    <button type="submit" name="save">Save</button>
+                                <?php endif ?>
+                                <?php echo "<br>";
+                                if (date_default_timezone_get()) {
+                                    echo "default timezone: " . date_default_timezone_get();
+                                }
+                                echo "<br>";
+                                echo date('Y-m-d H:i:s');
 
+                                ?>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-lg-12">
-            <div class="bg-white rounded-2">
-                <div class="p-3 bg-light bg-gradient border-bottom">
-                    <h5>Comments</h5>
-                </div>
-                <?php
-                include('comments/index.php');
-                ?>
             </div>
         </div>
     </div>

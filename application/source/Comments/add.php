@@ -1,44 +1,34 @@
 <?php
 // On démarre une session
 session_start();
-
+  // On inclut la connexion à la base
+  require_once('../db.php');
 if($_POST){
     if(isset($_POST['comment']) && !empty($_POST['comment'])
 ){
-        // On inclut la connexion à la base
-        require_once('config.php');
+      
 
         // On nettoie les données envoyées
         $comment = strip_tags($_POST['comment']);
 
         $sql = 'INSERT INTO `comments` (`comment`) VALUES (:comment);';
 
-        $query = $dbh->prepare($sql);
+        $query = $pdo->prepare($sql);
 
         $query->bindValue(':comment', $comment, PDO::PARAM_STR);
 
         $query->execute();
 
-        $_SESSION['comments'] = "Message ajouté";
+        $_SESSION['comments'] = "comment additionned";
         require_once('close.php');
 
         header('Location: index.php');
     }else{
-        $_SESSION['erreur'] = "Le formulaire est incomplet";
+        $_SESSION['erreur'] = "comment absent";
     }
 }
-
+require_once('../header.php');
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajouter un commentaire</title>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
-<body>
     <main class="container">
         <div class="row">
             <section class="col-12">
@@ -50,7 +40,7 @@ if($_POST){
                         $_SESSION['erreur'] = "";
                     }
                 ?>
-                <h1>Ajouter un commentaire</h1>
+                <h1>Add commeent</h1>
                 <form method="post">
      
                     <div class="form-group">
@@ -65,5 +55,4 @@ if($_POST){
             </section>
         </div>
     </main>
-</body>
-</html>a
+    <?php require_once('../footer.php'); ?>

@@ -1,3 +1,5 @@
+CREATE DATABASE IF NOT EXISTS GetFlix;
+USE GetFlix;
 -- phpMyAdmin SQL Dump
 -- version 4.8.1
 -- https://www.phpmyadmin.net/
