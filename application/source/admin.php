@@ -31,7 +31,6 @@
 
 
             <?php
-
             //connect to database
             $conn = mysqli_connect("database", "root", "root", "GetFlix");
 

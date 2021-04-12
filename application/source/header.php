@@ -55,13 +55,14 @@
 
 
             <div class="d-flex justify-content-end">
-                <div id="myform" class="searchbar">
-                    <label class="search_label" for="search_input">Search :</label>
-                    <input id="search_input" class="search_input" type="text" name="search"
-                           onkeypress="clickPress(event)">
-                    <button id="btn_search" aria-label="search" class="search_icon"><i class="fas fa-search"></i>
-                    </button>
-                </div>
+            <form class="searchbar" method="get" action="search.php">
+                        <label class="search_label" for="search_input">Search :</label>
+                        <input id="search_input" class="search_input" type="text" name="search"
+                               onkeypress="clickPress(event)">
+                        <button id="btn_search" type="submit" aria-label="search" class="search_icon"><i
+                                    class="fas fa-search"></i>
+                        </button>
+                    </form>
             </div>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
