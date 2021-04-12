@@ -8,22 +8,24 @@
 
 Our Project Team consists of
 
-* Backend Developer - [@Lord-of-Chicken](https://github.com/Lord-of-Chicken)
-* Backend Developer -[@gonzalovsilva](https://github.com/gonzalovsilva)
-* Frontend Developer - [@robbertklockaerts](https://github.com/robbertklockaerts)
-* Project Manager - [@Yuliya-beCode](https://github.com/Yuliya-beCode)
+- [@Lord-of-Chicken](https://github.com/Lord-of-Chicken)
+- [@gonzalovsilva](https://github.com/gonzalovsilva)
+- [@robbertklockaerts](https://github.com/robbertklockaerts)
+- [@Yuliya-beCode](https://github.com/Yuliya-beCode)
 
-Tasks allocation
+### Tasks allocation
 
 | Gonçalo Silva| Gael Layeux | Robbert Klockaerts |  Yuliya Bochkovskaya|
 |:-----------:|:-----------:|:-----------:| :-----------:|   
-| right to comment on the content  | a session system: registration, connection / disconnection. | right to comment on the content | General administration of the project/Figma style |  
-| Include a search bar and sort by filters| php footer/header include | admin dashboard | php insert video into iframe |
-| page or section that displays the top movies with the movie db API| Back office for user and comment management (CRUD) | login form css |  footer/header templates, merging css in one file|
-| General administration of the project drafting search flow chart| General administration of the project | General administration of the project|  register form css|
+| Creation of the video catalog / debag comments part  | A session system: registration, connection / disconnection / comments rights | Right to comment on the content | General administration of the project/Figma style |  
+| Include a search bar and sort by filters| php footer/header include | Admin dashboard | php insert video and info into info.php / draft info.php |
+| Page or section that displays the top movies with the movie db API| Back office for user and comment management (CRUD) | Login form css / 404-Page |  Footer/header templates, merging css in one file|
+| General administration of the project drafting search flow chart| General administration of the project | General administration of the project|  Register form css / README|
 
 If you have any questions in regards to our project, please do not hesitate to contact us directly on GitHub. Our
 contact details are mentioned above.
+
+
 
 # What
 
@@ -174,6 +176,9 @@ also pioneered live video streaming on Ethernet and via Internet Protocol over s
 
 - Meet
 - Merging the files
+- Debag comments part 
+- Work on 404-Page 
+- Work on merging css 
 
 **13/04/21**
 
