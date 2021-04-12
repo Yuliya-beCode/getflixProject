@@ -38,7 +38,15 @@ ul, p {
     margin: 0 auto;
     width: 80vw;
     opacity: .8;
+}
 
+
+.searchbarhead {
+   
+}
+#searchbarhead{
+    margin-bottom: 5px;
+    
 }
 
 
@@ -74,7 +82,7 @@ ul, p {
 }
 
 .searchbar:hover > .search_input {
-    caret-color: red
+    caret-color: red;
 }
 
 .searchbar:hover > .search_icon {

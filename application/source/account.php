@@ -21,21 +21,24 @@ if (!empty($_POST)) {
 
 include('header.php');
 ?>
-
+<div class="container">
 <h1>Bonjour <?= $_SESSION['auth']->username; ?></h1>
 
+
+
 <form action="" method="POST">
-
-    <div class="form-group">
-        <input type="password" name="password" placeholder="Change your password." class="form-control" />
+   
+    <div class="form-group text-center align-middle m-3 ">
+        <input type="password" name="password" placeholder="Change your password." class="md-form " />
     </div>
 
-    <div class="form-group">
-        <input type="password" name="password_confirm" placeholder="Password confirmation" class="form-control" />
+    <div class="form-group  text-center align-middle m-3 ">
+        <input type="password" name="password_confirm" placeholder="Password confirmation" class="md-from" />
     </div>
-
+    <div class="form-group  text-center align-middle ">
     <button type="submit" class="btn-primary">Change password</button>
-
+    </div>
+    </div>
 </form>
-
+</div>
 <?php include('footer.php'); ?>

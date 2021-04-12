@@ -55,8 +55,8 @@
 
 
             <div class="d-flex justify-content-end">
-            <form class="searchbar" method="get" action="search.php">
-                        <label class="search_label" for="search_input">Search :</label>
+            <form id="searchbarhead"class="searchbar" method="get" action="search.php">
+                        <label class="search_label" for="search_input">Search</label>
                         <input id="search_input" class="search_input" type="text" name="search"
                                onkeypress="clickPress(event)">
                         <button id="btn_search" type="submit" aria-label="search" class="search_icon"><i
