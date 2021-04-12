@@ -1,5 +1,4 @@
 </div>
-<link rel="stylesheet" href="footer.css"/>
 <!--search functions-->
 <script src="js/search.js"></script>
 

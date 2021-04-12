@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="style.css">
 
 <?php require_once('function.php'); ?>
 <?php

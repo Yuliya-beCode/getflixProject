@@ -4,7 +4,6 @@
 
 <?php include('header.php'); ?>
 
-    <link rel="stylesheet" href="search.css">
 
 
 <main class="container">

@@ -90,6 +90,7 @@ if ($_POST) {
                                         $userid3 = $message['userid'];
 
                                         if ($moovieid == $message['moovieid']){
+
                                             
 
                             ?>
@@ -114,7 +115,9 @@ if ($_POST) {
 
 
                     </table>
-
+                    <pre>
+<?php print_r($result)?>
+</pre>
                     <main class="container">
                         <div class="row">
                             <section class="col-12">

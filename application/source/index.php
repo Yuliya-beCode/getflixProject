@@ -5,7 +5,6 @@
 ?>
 <?php include('header.php'); ?>
 
-<link rel="stylesheet" href="index.css">
 
 <div class="container-fluid">
 <div class="row align-items-center" style="min-height: calc(100vh - 66px);">

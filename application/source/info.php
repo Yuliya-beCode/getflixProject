@@ -39,7 +39,6 @@ if (!$response_info->title) {
 } else { ?>
     <?php include('header.php'); ?>
 
-    <link rel="stylesheet" href="info.css" />
 
 
     <div class="container-md">
