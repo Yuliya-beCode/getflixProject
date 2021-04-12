@@ -4,10 +4,14 @@ html, body {
     background-size: cover;
     position: relative;
     width: 100%;
-    min-height: 100vh;
-    margin: 0;
-}
+    
 
+   }
+
+ main {
+     width: 500%;
+     
+ }
 header{
     margin-bottom: 20px;
 }
@@ -472,12 +476,13 @@ table, th {
 }
 
 footer {
-    position: fixed;
+  
     left: 0;
     bottom: 0;
     width: 100%;
-
 }
+
+
 
 
 #theater {

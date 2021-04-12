@@ -51,71 +51,69 @@ if (!empty($_POST)) {
 
 <?php include 'header.php'; ?>
 
+<main class="container-fluid">
+<h1>Register</h1>
+    <div class="col-sm d-flex justify-content-center align-content-center pt-2">
+
+        <div class="row bg-white rounded-2">
+            <form method="POST" action="" class="card-body">
+                <div class="form-header form-control-sm">
+                    <h3><i class="fas fa-envelope-square"></i> Please Fill in All the Blanks</h3>
+                </div>
 
 
-<div class="col-sm-8">
+                <div class="md-form form-control-sm">
+                    <i class="fas fa-user prefix grey-text"></i>
 
-    <div class="card">
-        <form method="POST" action="" class="card-body">
-            <div class="form-header">
-                <h3><i class="fas fa-envelope-square"></i> Please Fill in All the Blanks</h3>
-            </div>
+                    <label for="form-nickname">Username</label>
 
+                    <input type="text" id="username" class="form-control" name="username" value=""/>
 
+                </div>
 
-            <div class="md-form">
-                <i class="fas fa-user prefix grey-text"></i>
+                <div class="md-form form-control-sm">
+                    <i class="fas fa-envelope prefix grey-text"></i>
 
-                <label for="form-nickname">Username</label>
+                    <label for="form-email">Your email</label>
 
-                <input type="text" id="username" class="form-control" name="username" value="" />
-
-            </div>
-
-            <div class="md-form">
-                <i class="fas fa-envelope prefix grey-text"></i>
-
-                <label for="form-email">Your email</label>
-
-                <input type="text" class="form-control" id="email" name="email" value="" />
+                    <input type="text" class="form-control" id="email" name="email" value=""/>
 
 
-            </div>
+                </div>
 
 
-            <div class="md-form">
-                <i class="fas fa-key"></i>
-                <label for="form-password">Password</label>
-                <input type="text" class="form-control" id="password" name="password" />
+                <div class="md-form form-control-sm">
+                    <i class="fas fa-key"></i>
+                    <label for="form-password">Password</label>
+                    <input type="text" class="form-control" id="password" name="password"/>
 
-            </div>
-
-
+                </div>
 
 
-            <input type="hidden" name="forminscription" value="any" />
+                <input type="hidden" name="forminscription" value="any"/>
 
-            <div class="md-form">
-                <i class="fas fa-key"></i>
-                <label for="for-confirm" style="width: max-content">Confirm Password</label>
-                <input type="text" class="form-control" id="password_confirm" name="password_confirm" />
-
-
+                <div class="md-form form-control-sm">
+                    <i class="fas fa-key"></i>
+                    <label for="for-confirm" style="width: max-content">Confirm Password</label>
+                    <input type="text" class="form-control" id="password_confirm" name="password_confirm"/>
 
 
-            </div>
-            <div class="text-center mt-4">
-                <button class="btn btn-light-blue" name="forminscription">Submit</button>
-                <i class="fas fa-paper-plane"></i>
-            </div>
+                </div>
+                <div class="text-center mt-4">
+                       <span class="border rounded-3 p-2">
+                    <button class="btn btn-light-blue" name="forminscription">Submit</button>
+                    <i class="fas fa-paper-plane"></i>
+                       </span>
+                </div>
 
 
-        </form>
+            </form>
+
+        </div>
+
 
     </div>
 
 
-</div>
-
-
+    </main>
 <?php include 'footer.php'; ?>

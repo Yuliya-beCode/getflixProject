@@ -5,8 +5,7 @@
 <?php include('header.php'); ?>
 
 
-
-<main class="container">
+<main class="container-fluid">
     <div class="">
         <div id="switch" class="">
             <div id="filters" class="">
@@ -121,9 +120,9 @@
     </div>
     <div id="movies">
     </div>
-</main>
+
 <!--search functions-->
 <script src="js/search.js"></script>
 
-
+</main>
 <?php include('footer.php'); ?>
