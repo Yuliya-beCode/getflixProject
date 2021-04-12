@@ -24,3 +24,8 @@ function logged_only()
         exit();
     }
 }
+
+
+function useridok () {
+    if ($_REQUEST('userid') == $_REQUEST('id'));
+}

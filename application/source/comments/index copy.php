@@ -1,15 +1,19 @@
 <?php
 
 session_start();
-require_once('db.php');
-$sql = 'SELECT * FROM `users`, `comments`';
+$sql = 'SELECT * FROM `users`, `comments` DELETE  FROM `comments`  WHERE `userid` = `id`';
 // On prépare la requête
 $query = $pdo->prepare($sql);
 // On exécute la requête
 $query->execute();
 // On stocke le résultat dans un tableau associatif
 $result = $query->fetchAll(PDO::FETCH_ASSOC);
-
+?>
+<pre> <?php 
+print_r($result)
+?>
+</pre>
+<?php
 
 
 // Recuperation id user
@@ -98,7 +102,7 @@ if ($_POST) {
                                                 <td><?= $message['username'] ?></td>
                                                 <td><?= $message['comment'] ?></td>
 
-                                                <td> <a href="comments/edit.php?id2=<?= $message['id2'] ?>">Modifie</a> <a href="comments/delete.php?id2=<?= $message['id2'] ?>">Delete</a></td>
+                                                <td> <a href="comments/edit.php?id=<?= $message['id'] ?>">Modifie</a> <a href="comments/delete.php?id=<?= $message['id'] ?>">Delete</a></td>
                                             </tr>
                                         <?php
                                         }

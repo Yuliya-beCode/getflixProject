@@ -10,11 +10,11 @@ if($_POST){
         require_once('../db.php');
 
         // On nettoie les données envoyées
-        $id = strip_tags($_POST['id']);
+        $id = strip_tags($_POST['id2']);
         $messages = strip_tags($_POST['comment']);
         $prix = strip_tags($_POST['parent_id']);
 
-        $sql = 'UPDATE `comments` SET `comment`=:comment, `parent_id`=:parent_id WHERE `id`=:id;';
+        $sql = 'UPDATE `comments` SET `comment`=:comment, `parent_id`=:parent_id WHERE `id2`=:id2;';
 
         $query = $pdo->prepare($sql);
 
@@ -35,18 +35,18 @@ if($_POST){
 
 // Est-ce que l'id existe et n'est pas vide dans l'URL
 if(isset($_GET['id']) && !empty($_GET['id'])){
-    require_once('config.php');
+    require_once('../db.php');
 
     // On nettoie l'id envoyé
     $id = strip_tags($_GET['id']);
 
-    $sql = 'SELECT * FROM `comments` WHERE `id` = :id;';
+    $sql = 'SELECT * FROM `comments` WHERE `id2` = :id2;';
 
     // On prépare la requête
     $query = $pdo->prepare($sql);
 
     // On "accroche" les paramètre (id)
-    $query->bindValue(':id', $id, PDO::PARAM_INT);
+    $query->bindValue(':id2', $idé, PDO::PARAM_INT);
 
     // On exécute la requête
     $query->execute();

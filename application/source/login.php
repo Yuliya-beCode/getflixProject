@@ -6,7 +6,6 @@
     $user = $req->fetch();
     if (password_verify($_POST['password'], $user->password)) {
         session_start();
-
         $_SESSION['id'] = $user_id;
         $_SESSION['auth'] = $user;
         $_SESSION['flash']['success'] = "Your are connected !";
