@@ -11,8 +11,8 @@ if (!isset($_GET['movie']) or $_GET['movie'] == '') {
 // GET MOVIE INFO: https://api.themoviedb.org/3/movie/791373?api_key=04c35731a5ee918f014970082a0088b1&language=en-US
 $domain = 'https://api.themoviedb.org';
 $API_KEY = '04c35731a5ee918f014970082a0088b1';
-$id = $_GET['movie'];
 $video_key = false;
+$id = $_GET['movie'];
 
 //get information from https://api.themoviedb.org/3/movie/791373/videos?api_key=04c35731a5ee918f014970082a0088b1&language=en-US
 $c = curl_init($domain . '/3/movie/' . $id . '/videos?api_key=' . $API_KEY . '&language=en-US');
@@ -37,9 +37,10 @@ date_default_timezone_set("Europe/Brussels");
 if (!$response_info->title) {
     echo "Send to future 404 page - No movie found with this id on our database.";
 } else { ?>
+
+
+
     <?php include('header.php'); ?>
-
-
 
     <div class="container-md">
         <div class="row g-3">
@@ -97,7 +98,7 @@ if (!$response_info->title) {
                     <h5>Comments</h5>
                 </div>
                 <?php
-                include('comments/index.php');
+                include('info_comments.php');
                 ?>
             </div>
         </div>

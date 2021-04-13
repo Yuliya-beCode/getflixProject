@@ -8,10 +8,10 @@
 
 
 
-        <h1>Welcome to the <?php echo $_SESSION['users']['username']; ?> Page</h1>
+        <h1>Welcome to the <?php echo $_SESSION['users']['username']; ?>Page</h1>
 
         <div id="profile">
-            <h2>Your Username is: <?php echo  "<u>" . $_SESSION['users']['username'] . "</u>"; ?>  . "</u>"; ?></h2>
+            <h2>Your Username is: <?php echo  "<u>" . $_SESSION['users']['username'] . "</u>"; ?>. "</u>"; ?></h2>
             <div id="logout"><a href="logout.php">Please Click To Logout</a></div>
         </div>
 

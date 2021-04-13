@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <link rel="shortcut icon" href="./pictures/Logo.png"/>
     <!-- Bootstrap CSS -->
@@ -38,7 +38,7 @@
                         <a class="nav-link" aria-current="page" href="logout.php">Log Out</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="account.php">Profils</a>
+                        <a class="nav-link" aria-current="page" href="account.php">Profils</a>a
                     </li>
                
                     <li class="nav-item">
@@ -59,30 +59,25 @@
 
                 </ul>
             </div>
-        </div>
-        <header class="container">
     <div class="d-flex justify-content-end">
         <div id="myform" class="searchbar">
             <label class="search_label" for="search_input">Search :</label>
             <input id="search_input" class="search_input" type="text" name="search" onkeypress="clickPress(event)">
             <button id="btn_search" aria-label="search" class="search_icon"><i class="fas fa-search"></i></button>
         </div>
-    </div>
-</header>
     </nav>
 </header>
 
 
 <div class="container">
-
-<?php if (isset($_SESSION['flash'])) : ?>
-    <?php foreach ($_SESSION['flash'] as $type => $message) : ?>
-        <div class="alert alert-<?= $type; ?>">
-            <?= $message; ?>
+<?php if (isset($_SESSION['flash'])) :
+ foreach ($_SESSION['flash'] as $type => $message) : ?>
+        <div class="alert alert-<?php $type; ?>">
+            <?php $message; ?>
         </div>
     <?php endforeach; ?>
-    <?php unset($_SESSION['flash']); ?>
-<?php endif; ?>
+    <?php unset($_SESSION['flash']); 
+    endif; ?>
 </div>
 
 
