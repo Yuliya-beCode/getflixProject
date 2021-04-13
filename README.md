@@ -4,6 +4,12 @@
 
 ![img.png](pictures_README/img.png)
 
+
+This is the link to the website:
+
+https://www.lordofchicken.com/
+
+
 # Who
 
 Our Project Team consists of
@@ -65,22 +71,6 @@ Theatre :-)
 
 - Back office of the Theatre for user and comment management (CRUD) is also available.
 
-# Why
-
-Creating the video streaming website is an excellent task to bring together all the knowledge acquired so far. During
-this task we used use php, js, css, Docker, bootstrap and tested our skills in group work. We also used the TMDb API,
-which is an important part of the video streaming websites.
-
-Today is a time of movie streaming websites. Netflix, Amazon Prime Video, Disney HotStar are making much more money than
-the theatres themselves. They stream not only movies but also web series, documentaries, etc. This means that the
-streaming websites should guarantee a large working area for Wep Developers in the future.
-
-The first commercial streaming product appeared in late 1992 and was named StarWorks. StarWorks enabled on-demand MPEG-1
-full-motion videos to be randomly accessed on corporate Ethernet networks. Starworks was from Starlight Networks, who
-also pioneered live video streaming on Ethernet and via Internet Protocol over satellites with Hughes Network Systems.
-The first commercial streaming product appeared in late 1992 and was named StarWorks. StarWorks enabled on-demand MPEG-1
-full-motion videos to be randomly accessed on corporate Ethernet networks. Starworks was from Starlight Networks, who
-also pioneered live video streaming on Ethernet and via Internet Protocol over satellites with Hughes Network Systems. (source: Wikipedia)
 
 
 
@@ -183,16 +173,4 @@ also pioneered live video streaming on Ethernet and via Internet Protocol over s
 **13/04/21**
 
 - Deadline
-
-# Evaluation criterias -> self check
-
-- [x] We have realized all must-have features.
-- [] There is a published GitHub page available.
-- [] The code is well indented and commented.
-- [x] The readme is clean and complete.
-- [x] At least one Nice-to-have features is ok.
-- [] The HTML and CSS pass the W3C Validation tool.
-- [] The lighthouse test scores 90 at least on Performance, Best Practices, Accessibility and SEO.
-- [] The code is well indented and commented.
-
 
