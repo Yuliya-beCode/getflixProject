@@ -2,7 +2,7 @@
 
 This is the link to the website:
 
-https://www.lordofchicken.com/
+[Website result](https://www.lordofchicken.com/)
 
 
 ![Logo](pictures_README/Logo.png)
