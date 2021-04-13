@@ -1,13 +1,14 @@
 ### Welcome to the webpage of The Theatre !
 
+This is the link to the website:
+
+https://www.lordofchicken.com/
+
+
 ![Logo](pictures_README/Logo.png)
 
 ![img.png](pictures_README/img.png)
 
-
-This is the link to the website:
-
-https://www.lordofchicken.com/
 
 
 # Who
